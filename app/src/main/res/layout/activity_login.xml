@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rl"
+                tools:context="com.example.liaopenghui.loginanimation.MainActivity">
+
+    <EditText
+
+            android:hint="请输入手机号码"
+
+            android:id="@+id/editText"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="134dp" />
+    <EditText
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:hint="请输入密码"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="134dp" />
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/rl_register"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/editText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:hint="短信验证码"
+                android:visibility="invisible"
+                android:id="@+id/et_verifycode"
+                android:layout_marginRight="80dp" />
+
+        <EditText
+                android:layout_below="@+id/et_verifycode"
+                android:hint="请输入密码"
+                android:id="@+id/et_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp" />
+
+        <EditText
+                android:layout_below="@+id/et_pwd"
+                android:hint="邀请码"
+                android:id="@+id/et_invite"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp" />
+
+
+    </RelativeLayout>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="下一步"
+            android:id="@+id/btn_next"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="107dp" />
+</RelativeLayout>
