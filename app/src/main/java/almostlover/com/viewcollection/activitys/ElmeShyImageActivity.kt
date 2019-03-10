@@ -1,21 +1,14 @@
 package almostlover.com.viewcollection.activitys
 
 import almostlover.com.viewcollection.R
-import almostlover.com.viewcollection.adapter.MyAdapter
-import almostlover.com.viewcollection.views.ShyImageView
-import android.content.Context
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AbsListView
-import android.widget.BaseAdapter
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_elme_shy_image.*
-import java.util.*
 
 class ElmeShyImageActivity : AppCompatActivity() {
     private val TAG = javaClass.simpleName
