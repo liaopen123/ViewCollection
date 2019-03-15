@@ -43,7 +43,7 @@ class ElmeShyImageActivity : AppCompatActivity() {
 
         })
 
-        //        AnimatorSet anim = (AnimatorSet)AnimatorInflater.loadAnimator(MainActivity.this, R.animator.translatex);
+        //        AnimatorSet anim = (AnimatorSet)AnimatorInflater.loadAnimator(MainActivity.this, R.anim.translatex);
         //        iv.setPivotX(0);
         //        iv.setPivotY(0);
         //        //显示的调用invalidate
