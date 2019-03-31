@@ -13,15 +13,17 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activitys.anim.ObjectAnimatorActivity">
+        <activity android:name=".activitys.bezierline.BezierLineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.anim.TweenAnimActivity">
+        <activity android:name=".activitys.anim.ObjectAnimatorActivity">
 
+        </activity>
+        <activity android:name=".activitys.anim.TweenAnimActivity">
         </activity>
         <activity android:name=".activitys.JDAddCartTransfromActivity">
         </activity>
