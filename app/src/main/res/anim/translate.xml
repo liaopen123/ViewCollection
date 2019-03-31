@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--其中的数值表示含义：0，表示相对于原来初始化的位置为0,toXDelta="400"表示水平开始移动400个像素点-->
+    <!--fromXDelta = "0" 表示初始位置不动-->
+    <!--fromXDelta = "100%" 表示初始位置是右边自己的1倍距离-->
+    <!--fromXDelta = "100%p" 表示初始位置是代表相对于父类组件的百分比-->
+    <translate
+            android:fromXDelta="0"
+            android:toXDelta="0"
+            android:fromYDelta="100%p"
+            android:toYDelta="0"
+            android:duration="1000" />
+</set>

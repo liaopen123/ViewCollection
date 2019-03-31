@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activitys.anim.TweenAnimActivity">
+
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:text="scale_xml"  android:id="@+id/scale_xml"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="translate_xml" android:id="@+id/translate_xml"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="alpha_xml" android:id="@+id/alpha_xml"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="rotate_xml" android:id="@+id/rotate_xml"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="scale_code" android:id="@+id/scale_code"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="tranlate_code" android:id="@+id/tranlate_code"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="alpha_code" android:id="@+id/alpha_code"/>
+
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="set_xml_动画同时进行" android:id="@+id/set_xml"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="set_code_动画同时进行" android:id="@+id/set_code"/>
+    <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="set_code_动画依次进行" android:id="@+id/set_code_after"/>
+
+
+    <LinearLayout
+            android:padding="10dp"
+            android:background="#ff00"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="我默认在最右边的啊"/>
+    </LinearLayout>
+</LinearLayout>
