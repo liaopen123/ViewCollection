@@ -9,7 +9,7 @@
 
     <ImageView android:layout_width="match_parent" android:layout_height="300dp"
                android:id="@+id/iv_bg"/>
-    <ImageView
+    <almostlover.com.viewcollection.views.addcartview.FakeAddImageView
             android:visibility="gone"
             android:layout_width="match_parent" android:layout_height="300dp"
             android:id="@+id/iv_move"/>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 弹出时动画 -->
+        <!--fillAfter:ture  动画结束时，停留在最后一帧  false：第一帧-->
+        <!--startOffset  如果重复多次，执行前会暂停这段时间-->
+        <!--repeatMode，动画重复的模式，reverse为反向，当第偶次执行时，动画方向会相反。restart为重新执行，方向不变 -->
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale android:interpolator="@android:anim/accelerate_interpolator"
+           android:fromXScale="1.1"
+           android:toXScale="0.1"
+           android:fromYScale="1"
+           android:toYScale="0.1"
+           android:pivotX="50%"
+           android:pivotY="50%"
+           android:fillAfter="true"
+           android:duration="550"
+
+           android:startOffset="0"
+           android:repeatCount="0"
+    />
+</set>
