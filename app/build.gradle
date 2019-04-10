@@ -23,7 +23,7 @@ android {
         }
     }
 
-    greendao{
+    greendao {
         schemaVersion 1
         daoPackage 'com.greendao.gen'
         targetGenDir 'src/main/java'
@@ -48,4 +48,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko:$anko_version"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'com.google.android:flexbox:1.0.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
 }
