@@ -1,7 +1,15 @@
 package almostlover.com.viewcollection;
 
+import almostlover.com.viewcollection.bean.db.room.AppDatabase;
+import almostlover.com.viewcollection.bean.db.room.RoomSearBean;
+import almostlover.com.viewcollection.bean.db.room.SearchDao;
+import almostlover.com.viewcollection.utils.MathUtils;
 import android.app.Application;
+import android.arch.persistence.room.Room;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
 import com.greendao.gen.DaoMaster;
 import com.greendao.gen.DaoSession;
 
@@ -17,6 +25,7 @@ public class App extends Application {
         super.onCreate();
         instances = this;
         setDatabase();
+
     }
 
 

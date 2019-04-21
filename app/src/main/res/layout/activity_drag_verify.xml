@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".activitys.DragVerifyActivity">
+
+    <almostlover.com.viewcollection.views.seekbar.CanNotTouchSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:maxHeight="45dp"
+            android:minHeight="45dp"
+            android:progress="0"
+            android:clickable="false"
+            android:progressDrawable="@drawable/bg_forgotpassword_seekbar"
+            android:thumb="@drawable/bg_seekbar_thumb"
+            android:id="@+id/sb_progress"
+            android:thumbOffset="-1dp"
+            android:padding="1dp"
+    />
+
+
+
+
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <almostlover.com.viewcollection.views.seekbar.SwipeImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:id="@+id/iv_bg"/>r
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:progress="0"
+                android:clickable="false"
+
+                android:progressDrawable="@drawable/bg_transparent_seekbar"
+                android:id="@+id/seekbar_pazzle"
+                android:thumbOffset="-1dp"
+                android:padding="1dp"
+        />
+
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -50,5 +50,10 @@ dependencies {
     implementation 'org.greenrobot:greendao:3.2.2' // add library
     implementation 'com.google.android:flexbox:1.0.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    // add for room
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    // room 配合 RxJava
+    implementation "android.arch.persistence.room:rxjava2:1.1.1"
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
 }

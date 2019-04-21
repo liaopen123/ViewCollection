@@ -14,14 +14,17 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activitys.Main2Activity">
+        <activity android:name=".activitys.DoubleSeekBarActivity">
         </activity>
-        <activity android:name=".activitys.TagFlexBoxActivity">
+        <activity android:name=".activitys.DragVerifyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name=".activitys.TagFlexBoxActivity">
         </activity>
         <activity android:name=".activitys.bezierline.BezierLineActivity">
         </activity>
@@ -42,7 +45,6 @@
         <activity android:name=".activitys.ElmeShyImageActivity">
         </activity>
         <activity android:name=".MainActivity">
-
         </activity>
     </application>
 
