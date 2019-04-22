@@ -630,4 +630,19 @@ public class MathUtils {
         } while (iFlag != -1);
         return stringBuffer.toString();
     }
+
+    /**
+     * 生成 范围在[minValue,maxValue)的值 但不包含maxValue
+     * @param minValue
+     * @param maxValue
+     * @return
+     */
+    public static int getRangeOf(int minValue,int maxValue){
+
+        return (int) (minValue+(maxValue-minValue)*(new Random().nextDouble()));
+
+
+
+
+    }
 }

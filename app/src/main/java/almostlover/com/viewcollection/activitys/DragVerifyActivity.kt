@@ -2,8 +2,10 @@ package almostlover.com.viewcollection.activitys
 
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.ImageUtils
+import almostlover.com.viewcollection.utils.PuzzlePathUtils
 import almostlover.com.viewcollection.views.seekbar.CanNotTouchSeekBar
 import almostlover.com.viewcollection.views.seekbar.DrawHelperUtils
+import almostlover.com.viewcollection.views.seekbar.SwipeImageView
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
@@ -17,21 +19,20 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import kotlinx.android.synthetic.main.activity_drag_verify.*
-import java.util.*
+import android.graphics.Bitmap
+import android.view.ViewTreeObserver
 
 
 class DragVerifyActivity : AppCompatActivity() {
     private lateinit var mMaskShadowPaint: Paint //凹槽的painter
-    private val mCaptchaHeight: Int = 200
-    private val mCaptchaWidth: Int = 200
+    private var mCaptchaWidth: Int = 0
     private lateinit var puzzlePath: Path
-    private lateinit var mRandom: Random
-    private val mHeight: Int = 200
-    private val mWidth: Int = 200
+
 
     //验证码的左上角(起点)的x y
     private var mCaptchaX: Int = 0
     private var mCaptchaY: Int = 0
+    private var mResource: Drawable? = null
     val TAG = "DragVerifyActivity"
     private var isSeekBarClick: Boolean = true
 
@@ -58,22 +59,30 @@ class DragVerifyActivity : AppCompatActivity() {
                 Log.e(TAG, "progressprogress" + progress)
                 seekbar_pazzle.progress = progress
             }
+        })
 
-            override fun onXchange(offsetX: Float) {
-//                iv_image.layout(
-//                    (iv_image.left + offsetX).toInt(),
-//                    iv_image.top,
-//                    (iv_image.right + offsetX).toInt(),
-//                    iv_image.bottom
-//                )
+        iv_bg.setYChangeListener(object :SwipeImageView.YchangeListener{
+            override fun onYchanged(x: Int, y: Int, width: Int) {
+
+                mCaptchaX = x
+                mCaptchaY = y
+                mCaptchaWidth = width
+
+                Log.e(TAG, "onYchangedonYchangedonYchangedmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY")
+                iv_bg.postDelayed({setThumb() },100)
+//                setThumb()
+
+
+
             }
+
+
+
 
         })
 
-
-
         Glide.with(this)
-            .load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555525273577&di=00179c40c429f37f458d3f95f813ee16&imgtype=0&src=http%3A%2F%2Fscimg.jb51.net%2Fallimg%2F170615%2F106-1F615104352441.jpg")
+            .load("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555869647256&di=53ee0f3c3447c24b4f8c74d793ffdff6&imgtype=0&src=http%3A%2F%2Fattachments.gfan.net.cn%2Fforum%2F201806%2F05%2F145829js0kwvpt00w7sw0q.jpg")
             .listener(object : RequestListener<Drawable> {
                 override fun onResourceReady(
                     resource: Drawable?,
@@ -82,34 +91,12 @@ class DragVerifyActivity : AppCompatActivity() {
                     dataSource: DataSource?,
                     isFirstResource: Boolean
                 ): Boolean {
-
-                    Log.e(TAG, "GlideGlideGlideGlideGlideGlideonDrawonDrawonDrawonDrawonDrawonDrawonDrawonDrawonDraw");
-//                    val clipBitmap = ImageUtils.clip(bitmap, 200, 200, 200, 200)
-//
-                    val bitmapDrawable = resource as BitmapDrawable
-                    val bitmap = bitmapDrawable.bitmap
-                    Log.e(TAG, "bitmapbitmapbitmapbitmapbitmap" + bitmap.width + "bitmap.height" + bitmap.height);
-//
+                    mResource = resource
 
 
-                    val clipBitmap = ImageUtils.clip(bitmap, 300, 300, 200, 200)
-                    val cirleBitmap = getCirleBitmap(clipBitmap)
-////
-                    val newThumb = BitmapDrawable(resources, cirleBitmap)
+                    iv_bg.postDelayed({setThumb() },100)
 
-                    seekbar_pazzle.thumb = newThumb
-                    seekbar_pazzle.thumbOffset = 50
-
-                    val layoutParams = seekbar_pazzle.layoutParams as FrameLayout.LayoutParams
-                    layoutParams.setMargins(0, 300, 0, 0)
-                    seekbar_pazzle.layoutParams = layoutParams
-
-
-
-
-
-
-
+//                    setThumb()
                     return false
                 }
 
@@ -146,71 +133,32 @@ class DragVerifyActivity : AppCompatActivity() {
             }
 
         })
-        setPuzzlePath()
+
+
+        val vto = seekbar_pazzle.getViewTreeObserver()
+        vto.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+            override fun onPreDraw(): Boolean {
+//                val res = resources
+//                val thumb = res.getDrawable(R.drawable.thumb)
+//                val h = mySeekBar.getMeasuredHeight() * 1.5 // 8 * 1.5 = 12
+//                val bmpOrg = (thumb as BitmapDrawable).bitmap
+//                val bmpScaled = Bitmap.createScaledBitmap(bmpOrg, h, h, true)
+//                val newThumb = BitmapDrawable(res, bmpScaled)
+//                newThumb.setBounds(0, 0, newThumb.intrinsicWidth, newThumb.intrinsicHeight)
+//                mySeekBar.setThumb(newThumb)
+//
+//                mySeekBar.getViewTreeObserver().removeOnPreDrawListener(this)
+
+                Log.e(TAG,"addOnPreDrawListeneraddOnPreDrawListeneraddOnPreDrawListener");
+                return true
+            }
+        })
+
+        btn_next.setOnClickListener {
+            setThumb()
+        }
     }
 
-
-    fun setPuzzlePath() {
-        puzzlePath = Path()
-        val random = Random(System.nanoTime())
-
-        var gap = mCaptchaWidth / 7
-
-
-        //水平线1
-        //起点的point
-        val startPint = Point(mCaptchaX, mCaptchaY + gap)
-        val startArcPoint1 = PointF((mCaptchaX + (2 * gap)).toFloat(), (mCaptchaY + gap).toFloat())//水平方向  第一个圆弧起点
-        val endArcPoint1 = PointF((mCaptchaX + (4 * gap)).toFloat(), (mCaptchaY + gap).toFloat())//水平方向  第一个圆弧起点
-        val lin1EndPonit = Point(mCaptchaX + (6 * gap), mCaptchaY + gap)//水平方向  第一个拐点
-
-
-        //数值线1
-        val lin2MiddlePonit = PointF((mCaptchaX + (6 * gap)).toFloat(), (mCaptchaY + (3 * gap)).toFloat())//水平方向  第一个拐点
-        val endArcPoint2 = PointF((mCaptchaX + (6 * gap)).toFloat(), (mCaptchaY + 5 * gap).toFloat())//水平方向  第一个圆弧起点
-
-        val lin2EndPonit = PointF((mCaptchaX + (6 * gap)).toFloat(), (mCaptchaY + (7 * gap)).toFloat())//右边的圆
-
-
-        //底部线终点
-        val lin3EndPonit = Point(mCaptchaX, mCaptchaY + (7 * gap))//右边的圆
-
-
-        //左边的线
-        val leftMiddlePint = PointF(mCaptchaX.toFloat(), (mCaptchaY + (5 * gap)).toFloat())
-        val leftendCirclePint3 = PointF(mCaptchaX.toFloat(), (mCaptchaY + (3 * gap)).toFloat())
-        val circleCenterPoint3 = Point(mCaptchaX, mCaptchaY + (4 * gap))//左边的圆
-
-        puzzlePath.reset()
-        puzzlePath.moveTo(startPint.x.toFloat(), startPint.y.toFloat()) //挪到起点
-        puzzlePath.lineTo(startArcPoint1.x.toFloat(), startArcPoint1.y.toFloat()) //挪到第一个起点
-        //开始画弧度
-        DrawHelperUtils.drawPartCircle(startArcPoint1, endArcPoint1, puzzlePath, true)
-        //画完后
-        puzzlePath.lineTo(lin1EndPonit.x.toFloat(), lin1EndPonit.y.toFloat()) //挪到第一条大线的终点
-
-
-        //画竖直线1
-        puzzlePath.lineTo(lin2MiddlePonit.x.toFloat(), lin2MiddlePonit.y.toFloat()) //画到竖线 准备画圆
-
-        DrawHelperUtils.drawPartCircle(lin2MiddlePonit, endArcPoint2, puzzlePath, true)
-
-
-        //竖线终点1
-        puzzlePath.lineTo(lin2EndPonit.x.toFloat(), lin2EndPonit.y.toFloat())
-
-
-        //画底部线
-        puzzlePath.lineTo(lin3EndPonit.x.toFloat(), lin3EndPonit.y.toFloat())
-
-
-        //画左边的线
-        puzzlePath.lineTo(leftMiddlePint.x.toFloat(), leftMiddlePint.y.toFloat())
-        DrawHelperUtils.drawPartCircle(leftMiddlePint, leftendCirclePint3, puzzlePath, false)
-
-        puzzlePath.close()
-
-    }
 
 
 
@@ -218,9 +166,6 @@ class DragVerifyActivity : AppCompatActivity() {
 
     fun getCirleBitmap(bmp: Bitmap): Bitmap {
         //获取bmp的宽高 小的一个做为圆的直径r
-        var w = 200;
-        var h = 200;
-        var r = 200;
 
         //创建一个paint
         var paint = Paint();
@@ -240,7 +185,42 @@ class DragVerifyActivity : AppCompatActivity() {
 //        canvas.drawBitmap(bmp, 0f, 0f, paint)
         canvas.drawBitmap(bmp, Matrix(), paint)  //在画布上画一个和bitmap一模一样的图
 
-        return newBitmap;
+        return newBitmap
+    }
+
+
+    private fun setThumb() {
+
+
+        if(mResource!=null&&mCaptchaWidth>0&& mCaptchaX>0&&mCaptchaY>0) {
+            Log.e(TAG, "setThumbsetThumbsetThumbsetThumbmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY")
+//            setPuzzlePath()
+
+
+            puzzlePath = PuzzlePathUtils.getPuzzlePath(0, 0, mCaptchaWidth)
+
+
+
+
+            val bitmapDrawable = mResource as BitmapDrawable
+            val bitmap = bitmapDrawable.bitmap
+            Log.e(TAG, "bitmapbitmapbitmapbitmapbitmap" + bitmap.width + "bitmap.height" + bitmap.height)
+//
+
+
+            val clipBitmap = ImageUtils.clip(bitmap, mCaptchaX, mCaptchaY, mCaptchaWidth, mCaptchaWidth)
+            val cirleBitmap = getCirleBitmap(clipBitmap)
+
+            var newThumb = BitmapDrawable( resources,cirleBitmap)
+            seekbar_pazzle.thumb = newThumb
+            seekbar_pazzle.thumbOffset = 50
+            seekbar_pazzle.requestLayout()
+
+            val layoutParams = seekbar_pazzle.layoutParams as FrameLayout.LayoutParams
+            layoutParams.setMargins(0, mCaptchaY, 0, 0)
+            seekbar_pazzle.layoutParams = layoutParams
+        }
+
     }
 
 }
