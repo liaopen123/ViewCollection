@@ -1,14 +1,10 @@
-package almostlover.com.viewcollection.views.seekbar;
+package almostlover.com.viewcollection.views.swipepuzzle2unlock.util;
 
 import android.graphics.Path;
 import android.graphics.PointF;
 
 /**
- * 介绍：帮助绘图的工具类
- * 作者：zhangxutong
- * 邮箱：mcxtzhang@163.com
- * 主页：http://blog.csdn.net/zxt0601
- * 时间： 2016/11/16.
+ * 介绍：帮助绘制半圆bath的工具类
  */
 
 public class DrawHelperUtils {

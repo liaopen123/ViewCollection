@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+
+
+            <com.shunguang.vip.view.swipepuzzle2unlock.SwipeImageView android:layout_width="match_parent"
+                                                                      android:layout_height="200dp"
+                                                                      android:id="@+id/iv_bg"/>
+            <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:src="@drawable/ic_launcher" android:id="@+id/iv_refresh"
+                       android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+        <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="100dp"
+                android:progress="0"
+                android:clickable="false"
+                android:thumb="@null"
+                android:progressDrawable="@drawable/bg_transparent_seekbar"
+                android:id="@+id/seekbar_pazzle"
+                android:thumbOffset="-1dp"
+                android:padding="1dp"
+        />
+
+
+    </FrameLayout>
+
+    <com.shunguang.vip.view.swipepuzzle2unlock.seekbar.CanNotTouchSeekBar
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:maxHeight="45dp"
+            android:minHeight="45dp"
+            android:progress="0"
+            android:clickable="false"
+            android:progressDrawable="@drawable/bg_forgotpassword_seekbar"
+            android:thumb="@drawable/bg_seekbar_thumb"
+            android:id="@+id/sb_progress"
+            android:thumbOffset="-1dp"
+            android:padding="1dp"
+    />
+</LinearLayout>

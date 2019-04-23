@@ -638,11 +638,6 @@ public class MathUtils {
      * @return
      */
     public static int getRangeOf(int minValue,int maxValue){
-
         return (int) (minValue+(maxValue-minValue)*(new Random().nextDouble()));
-
-
-
-
     }
 }

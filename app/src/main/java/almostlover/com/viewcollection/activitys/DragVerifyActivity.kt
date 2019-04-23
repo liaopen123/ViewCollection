@@ -4,7 +4,6 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.ImageUtils
 import almostlover.com.viewcollection.utils.PuzzlePathUtils
 import almostlover.com.viewcollection.views.seekbar.CanNotTouchSeekBar
-import almostlover.com.viewcollection.views.seekbar.DrawHelperUtils
 import almostlover.com.viewcollection.views.seekbar.SwipeImageView
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
@@ -12,6 +11,7 @@ import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.ViewTreeObserver
 import android.widget.FrameLayout
 import android.widget.SeekBar
 import com.bumptech.glide.Glide
@@ -19,8 +19,6 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import kotlinx.android.synthetic.main.activity_drag_verify.*
-import android.graphics.Bitmap
-import android.view.ViewTreeObserver
 
 
 class DragVerifyActivity : AppCompatActivity() {
@@ -61,22 +59,22 @@ class DragVerifyActivity : AppCompatActivity() {
             }
         })
 
-        iv_bg.setYChangeListener(object :SwipeImageView.YchangeListener{
+        iv_bg.setYChangeListener(object : SwipeImageView.YchangeListener {
             override fun onYchanged(x: Int, y: Int, width: Int) {
 
                 mCaptchaX = x
                 mCaptchaY = y
                 mCaptchaWidth = width
 
-                Log.e(TAG, "onYchangedonYchangedonYchangedmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY")
-                iv_bg.postDelayed({setThumb() },100)
+                Log.e(
+                    TAG,
+                    "onYchangedonYchangedonYchangedmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY"
+                )
+                iv_bg.postDelayed({ setThumb() }, 100)
 //                setThumb()
 
 
-
             }
-
-
 
 
         })
@@ -94,7 +92,7 @@ class DragVerifyActivity : AppCompatActivity() {
                     mResource = resource
 
 
-                    iv_bg.postDelayed({setThumb() },100)
+                    iv_bg.postDelayed({ setThumb() }, 100)
 
 //                    setThumb()
                     return false
@@ -149,7 +147,7 @@ class DragVerifyActivity : AppCompatActivity() {
 //
 //                mySeekBar.getViewTreeObserver().removeOnPreDrawListener(this)
 
-                Log.e(TAG,"addOnPreDrawListeneraddOnPreDrawListeneraddOnPreDrawListener");
+                Log.e(TAG, "addOnPreDrawListeneraddOnPreDrawListeneraddOnPreDrawListener");
                 return true
             }
         })
@@ -158,10 +156,6 @@ class DragVerifyActivity : AppCompatActivity() {
             setThumb()
         }
     }
-
-
-
-
 
 
     fun getCirleBitmap(bmp: Bitmap): Bitmap {
@@ -192,14 +186,15 @@ class DragVerifyActivity : AppCompatActivity() {
     private fun setThumb() {
 
 
-        if(mResource!=null&&mCaptchaWidth>0&& mCaptchaX>0&&mCaptchaY>0) {
-            Log.e(TAG, "setThumbsetThumbsetThumbsetThumbmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY")
+        if (mResource != null && mCaptchaWidth > 0 && mCaptchaX > 0 && mCaptchaY > 0) {
+            Log.e(
+                TAG,
+                "setThumbsetThumbsetThumbsetThumbmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY"
+            )
 //            setPuzzlePath()
 
 
             puzzlePath = PuzzlePathUtils.getPuzzlePath(0, 0, mCaptchaWidth)
-
-
 
 
             val bitmapDrawable = mResource as BitmapDrawable
@@ -211,7 +206,7 @@ class DragVerifyActivity : AppCompatActivity() {
             val clipBitmap = ImageUtils.clip(bitmap, mCaptchaX, mCaptchaY, mCaptchaWidth, mCaptchaWidth)
             val cirleBitmap = getCirleBitmap(clipBitmap)
 
-            var newThumb = BitmapDrawable( resources,cirleBitmap)
+            var newThumb = BitmapDrawable(resources, cirleBitmap)
             seekbar_pazzle.thumb = newThumb
             seekbar_pazzle.thumbOffset = 50
             seekbar_pazzle.requestLayout()

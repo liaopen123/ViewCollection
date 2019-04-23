@@ -426,6 +426,49 @@ public final class ImageUtils {
         return clip(src, x, y, width, height, false);
     }
 
+
+    /**
+     * 裁剪并叠加path生成拼图
+     * @param src
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @param puzzlePath
+     * @return
+     */
+    public static Bitmap clipAndGetPuzzleBitmap(final Bitmap src,
+                                                final int x,
+                                                final int y,
+                                                final int width,
+                                                final int height,
+                                                Path puzzlePath){
+        return getPuzzleBitmap(clip(src, x, y, width, height), puzzlePath);
+    }
+
+
+    public static Bitmap getPuzzleBitmap( Bitmap  bmp, Path puzzlePath)  {
+        //创建一个paint
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.DITHER_FLAG);
+        paint.setAntiAlias(true);
+
+
+        Bitmap newBitmap = Bitmap.createBitmap(bmp.getWidth(), bmp.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(newBitmap);
+
+        canvas.drawPath(puzzlePath, paint);
+        //然后 paint要设置Xfermode 模式为SRC_IN 显示上层图像（后绘制的一个）的相交部分
+        paint.setXfermode(new  PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+
+        //canvas调用drawBitmap直接将bmp对象画在画布上 因为paint设置了Xfermode，所以最终只会显示这个bmp的一部分 也就
+        //是bmp的和下层圆形相交的一部分圆形的内容
+//        canvas.drawBitmap(bmp, 0f, 0f, paint)
+        canvas.drawBitmap(bmp,new  Matrix(), paint);  //在画布上画一个和bitmap一模一样的图
+
+        return newBitmap;
+    }
+
+
     /**
      * Return the clipped bitmap.
      *
