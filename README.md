@@ -9,3 +9,6 @@
 ## 下落的🍰
 ![](https://github.com/liaopen123/ImageRepo/blob/master/app/src/main/res/raw/cakeview.gif?raw=true)
 
+## 添加滑动解锁 puzzle lock
+![](https://wx3.sinaimg.cn/mw1024/80c4428dly1g2btmd06uwg205e0bo7wh.gif)
+
