@@ -1,10 +1,9 @@
 package almostlover.com.viewcollection.activitys
 
+
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.ImageUtils
 import almostlover.com.viewcollection.utils.PuzzlePathUtils
-import almostlover.com.viewcollection.views.seekbar.CanNotTouchSeekBar
-import almostlover.com.viewcollection.views.seekbar.SwipeImageView
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
@@ -18,6 +17,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
+import com.shunguang.vip.view.swipepuzzle2unlock.SwipeImageView
+import com.shunguang.vip.view.swipepuzzle2unlock.seekbar.CanNotTouchSeekBar
 import kotlinx.android.synthetic.main.activity_drag_verify.*
 
 
@@ -53,6 +54,10 @@ class DragVerifyActivity : AppCompatActivity() {
 
 
         sb_progress.setXchangeListener(object : CanNotTouchSeekBar.XchangeListener {
+            override fun onResult(progress: Int) {
+
+            }
+
             override fun onProgressChange(progress: Int) {
                 Log.e(TAG, "progressprogress" + progress)
                 seekbar_pazzle.progress = progress
@@ -60,21 +65,11 @@ class DragVerifyActivity : AppCompatActivity() {
         })
 
         iv_bg.setYChangeListener(object : SwipeImageView.YchangeListener {
-            override fun onYchanged(x: Int, y: Int, width: Int) {
-
-                mCaptchaX = x
-                mCaptchaY = y
-                mCaptchaWidth = width
-
-                Log.e(
-                    TAG,
-                    "onYchangedonYchangedonYchangedmCaptchaWidth:$mCaptchaWidth,mCaptchaX:$mCaptchaX,mCaptchaY:$mCaptchaY"
-                )
-                iv_bg.postDelayed({ setThumb() }, 100)
-//                setThumb()
-
+            override fun onYchanged(x: Int, y: Int, width: Int, randomProgress: Int) {
 
             }
+
+
 
 
         })

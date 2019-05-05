@@ -1,6 +1,6 @@
 package almostlover.com.viewcollection.utils
 
-import almostlover.com.viewcollection.views.seekbar.DrawHelperUtils
+import almostlover.com.viewcollection.views.swipepuzzle2unlock.util.DrawHelperUtils
 import android.graphics.Path
 import android.graphics.Point
 import android.graphics.PointF

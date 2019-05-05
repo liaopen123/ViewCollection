@@ -14,16 +14,21 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activitys.DoubleSeekBarActivity">
+        <activity android:name=".aspectj.AspectJ01Activity">
         </activity>
-        <activity android:name=".activitys.DragVerifyActivity">
+        <activity android:name=".activitys.DargLayoutActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity android:name=".activitys.FiveWayTimeCountActivity">
+        </activity>
+        <activity android:name=".activitys.DoubleSeekBarActivity">
+        </activity>
+        <activity android:name=".activitys.DragVerifyActivity">
+        </activity>
         <activity android:name=".activitys.TagFlexBoxActivity">
         </activity>
         <activity android:name=".activitys.bezierline.BezierLineActivity">

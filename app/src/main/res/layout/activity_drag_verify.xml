@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".activitys.DragVerifyActivity">
 
-    <almostlover.com.viewcollection.views.seekbar.CanNotTouchSeekBar
+    <com.shunguang.vip.view.swipepuzzle2unlock.seekbar.CanNotTouchSeekBar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="100"
@@ -30,7 +30,7 @@
 
 
     <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-        <almostlover.com.viewcollection.views.seekbar.SwipeImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:id="@+id/iv_bg"/>r
+        <com.shunguang.vip.view.swipepuzzle2unlock.SwipeImageView android:layout_width="match_parent" android:layout_height="wrap_content" android:scaleType="fitCenter" android:id="@+id/iv_bg"/>r
         <SeekBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
