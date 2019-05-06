@@ -26,8 +26,8 @@ public class TraceAspect {
     @Around("methodAnnotatedWithDebugTrace() || constructorAnnotatedDebugTrace()")
     public Object weaveJoinPoint(ProceedingJoinPoint joinPoint) throws  Throwable{
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
-        String className = methodSignature.getDeclaringType().getSimpleName();
-        String methodName = methodSignature.getName();
+        String className = methodSignature.getDeclaringType().getSimpleName();//拿到类名
+        String methodName = methodSignature.getName();//拿到方法名
 
         final StopWatch stopWatch = new StopWatch();
         stopWatch.start();
@@ -37,7 +37,8 @@ public class TraceAspect {
 
         DebugLog.log(className, buildLogMessage(methodName, stopWatch.getTotalTimeMillis()));
 
-        return result;
+//        return result;
+        return  null;
     }
 
 
