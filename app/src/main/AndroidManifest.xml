@@ -14,22 +14,20 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".activitys.TitleTransformActivity">
+        <activity android:name=".aspectj01.Main3Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".activitys.TitleTransformActivity">
         </activity>
         <activity android:name=".aspectj.AspectJ01Activity">
 
         </activity>
         <activity android:name=".activitys.DargLayoutActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity android:name=".activitys.FiveWayTimeCountActivity">
         </activity>
