@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent"
+        tools:context=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity">
+
+
+    <almostlover.com.viewcollection.views.sixway2dragview.Drag1OnLayoutView
+            android:id="@+id/iv"
+            android:layout_marginTop="10px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+</RelativeLayout>

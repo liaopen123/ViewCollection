@@ -8,9 +8,15 @@
         tools:context=".activitys.SixWay2DragViewActivity">
 
 
-    <almostlover.com.viewcollection.views.sixway2dragview.Drag1LayoutView android:layout_width="wrap_content"
-                                                                          android:layout_height="wrap_content"
-                                                                          android:src="@mipmap/ic_launcher"/>
+    <almostlover.com.viewcollection.views.sixway2dragview.Drag1OnLayoutRawXView
+            android:layout_width="wrap_content"
+                                                                            android:layout_height="wrap_content"
+                                                                            android:src="@mipmap/ic_launcher"/>
+    <almostlover.com.viewcollection.views.sixway2dragview.Drag1OnLayoutXView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"/>
 
 
 </RelativeLayout>
