@@ -8,7 +8,7 @@
         tools:context=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity">
 
 
-    <almostlover.com.viewcollection.views.sixway2dragview.Drag1OnLayoutView
+    <almostlover.com.viewcollection.views.sixway2dragview.drag1onLayout.Drag1OnLayoutView
             android:id="@+id/iv"
             android:layout_marginTop="10px"
             android:layout_alignParentRight="true"

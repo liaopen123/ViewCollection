@@ -14,8 +14,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity">
+        </activity>
         <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity">
-
         </activity>
         <activity android:name=".aspectj01.Main3Activity">
         </activity>
@@ -43,7 +44,7 @@
         </activity>
         <activity android:name=".activitys.ViewFlipperActivity">
         </activity>
-        <activity android:name=".activitys.SixWay2DragViewActivity">
+        <activity android:name=".activitys.viewdrag.SixWay2DragViewActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

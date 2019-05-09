@@ -1,15 +1,15 @@
-package almostlover.com.viewcollection.views.sixway2dragview
+package almostlover.com.viewcollection.views.sixway2dragview.drag4scrollto
 
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
-import android.widget.ImageView
-import android.R.layout
 import android.view.View
+import android.widget.ImageView
 
-//通过event.x进行位移的 二者有区别
-class Drag1OnLayoutXView : ImageView {
+
+class Drag4ScrollByView : ImageView {
+
 
 
     private val TAG: String?  ="Drag1OnLayoutXView"
@@ -30,6 +30,7 @@ class Drag1OnLayoutXView : ImageView {
         //获取到手指处的横坐标和纵坐标
         val x = event.x.toInt()  //
         val y = event.y.toInt()
+
         Log.e(TAG,"event.x${event.x},event.Y${event.y}")
 
         when (event.action) {
@@ -44,11 +45,7 @@ class Drag1OnLayoutXView : ImageView {
                 //计算移动的距离
                 val offX = x - lastX
                 val offY = y - lastY
-                //调用layout方法来重新放置它的位置
-                layout(
-                    left + offX, top + offY,
-                    right + offX, bottom + offY
-                )
+                (parent as View).scrollBy(-offX, -offY)
             }
         }
 

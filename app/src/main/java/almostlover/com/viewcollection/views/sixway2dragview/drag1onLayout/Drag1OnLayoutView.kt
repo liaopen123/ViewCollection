@@ -1,4 +1,4 @@
-package almostlover.com.viewcollection.views.sixway2dragview
+package almostlover.com.viewcollection.views.sixway2dragview.drag1onLayout
 
 import android.annotation.SuppressLint
 import android.content.Context
