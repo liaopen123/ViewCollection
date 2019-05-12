@@ -20,11 +20,11 @@ public class FieldAnimal {
     }
 
     public void add(){
-        try {
+//        try {
             int age = 100 / 0;
             int i = age + 1;
-        }catch (ArithmeticException e){
-            e.printStackTrace();
-        }
+//        }catch (ArithmeticException e){
+//            e.printStackTrace();
+//        }
     }
 }

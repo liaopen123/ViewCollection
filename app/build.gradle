@@ -78,7 +78,7 @@ dependencies {
     annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 
     implementation 'org.aspectj:aspectjrt:1.8.1'
-
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
 }
 
 
