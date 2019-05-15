@@ -1,6 +1,8 @@
 package almostlover.com.viewcollection.aspectj01;
 
 import almostlover.com.viewcollection.R;
+import almostlover.com.viewcollection.annotation.Test;
+import almostlover.com.viewcollection.annotation.TestAnn;
 import almostlover.com.viewcollection.aspectj01.afterreturning.Animal;
 import almostlover.com.viewcollection.aspectj01.apply.getpermission.CheckPermission;
 import almostlover.com.viewcollection.aspectj01.constructor.call.ConstructorAnimal;
@@ -12,6 +14,9 @@ import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+import cn.com.almostlover.annotation.MyClass;
+import cn.com.almostlover.annotation.testanno.TestAnno;
+import cn.com.almostlover.javassist.JavassistDemo;
 
 public class Main3Activity extends BaseActivity {
 
@@ -28,7 +33,10 @@ public class Main3Activity extends BaseActivity {
 //        aroundAnimal.fly();
 //        aroundAnimal.beforeFly();
 
-
+        MyClass myClass = new MyClass();
+        myClass.testAnnotion();
+        TestAnno testAnno = new TestAnno();
+        testAnno.testBug();
 //        ConstructorAnimal.fly();
         FieldAnimal fieldAnimal = new FieldAnimal();
         fieldAnimal.setAge(20);
@@ -38,16 +46,22 @@ public class Main3Activity extends BaseActivity {
         animal.getHeight(1);
         try {
             fieldAnimal.add();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        Toast.makeText(this, "得到的age:"+ fieldAnimal.getAge(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "得到的age:" + fieldAnimal.getAge(), Toast.LENGTH_SHORT).show();
+
+
+        JavassistDemo javassistDemo = new JavassistDemo();
+        javassistDemo.test();
         test();
     }
 
     @CheckPermission(Manifest.permission.CAMERA)
-    public void test(){
+    public void test() {
         Toast.makeText(this, "拿到权限的我为所欲为", Toast.LENGTH_SHORT).show();
 
     }
+
+
 }

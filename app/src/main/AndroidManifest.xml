@@ -15,6 +15,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".annotation.AnnotationActivity">
+        </activity>
         <activity android:name=".activitys.viewdrag.ViewDragHelperActivity">
         </activity>
         <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity">
@@ -51,7 +53,6 @@
         <activity android:name=".activitys.ViewFlipperActivity">
         </activity>
         <activity android:name=".activitys.viewdrag.SixWay2DragViewActivity">
-
         </activity>
         <activity android:name=".activitys.CakeViewActivity">
         </activity>
