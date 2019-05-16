@@ -15,7 +15,7 @@ public class JavassistDemo {
 
         try {
             //添加名为id 的int类型字段
-            CtField id = CtField.make("String id;", ctClass);//创建一个名为id 的int 的变量
+            CtField id = new CtField(CtClass.intType, "id", ctClass);//创建一个名为id 的int 的变量
             id.setModifiers(AccessFlag.PUBLIC);//将该字段设置为public
             ctClass.addField(id);
 

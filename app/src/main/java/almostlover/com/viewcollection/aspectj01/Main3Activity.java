@@ -17,6 +17,7 @@ import android.widget.Toast;
 import cn.com.almostlover.annotation.MyClass;
 import cn.com.almostlover.annotation.testanno.TestAnno;
 import cn.com.almostlover.javassist.JavassistDemo;
+import cn.com.almostlover.javassist.ModifyOtherClassDemo;
 
 public class Main3Activity extends BaseActivity {
 
@@ -52,8 +53,8 @@ public class Main3Activity extends BaseActivity {
         Toast.makeText(this, "得到的age:" + fieldAnimal.getAge(), Toast.LENGTH_SHORT).show();
 
 
-        JavassistDemo javassistDemo = new JavassistDemo();
-        javassistDemo.test();
+        ModifyOtherClassDemo modifyOtherClassDemo = new ModifyOtherClassDemo();
+        modifyOtherClassDemo.test();
         test();
     }
 
