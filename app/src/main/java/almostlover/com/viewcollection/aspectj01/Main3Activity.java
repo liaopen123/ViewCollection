@@ -1,5 +1,6 @@
 package almostlover.com.viewcollection.aspectj01;
 
+import almostlover.com.viewcollection.MainActivity;
 import almostlover.com.viewcollection.R;
 import almostlover.com.viewcollection.annotation.Test;
 import almostlover.com.viewcollection.annotation.TestAnn;
@@ -11,8 +12,10 @@ import almostlover.com.viewcollection.base.BaseActivity;
 import almostlover.com.viewcollection.utils.PermissionUtils;
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 import cn.com.almostlover.annotation.MyClass;
 import cn.com.almostlover.annotation.testanno.TestAnno;
@@ -56,6 +59,14 @@ public class Main3Activity extends BaseActivity {
         ModifyOtherClassDemo modifyOtherClassDemo = new ModifyOtherClassDemo();
         modifyOtherClassDemo.test();
         test();
+
+
+        findViewById(R.id.tv_center).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Main3Activity.this, MainActivity.class));
+            }
+        });
     }
 
     @CheckPermission(Manifest.permission.CAMERA)
