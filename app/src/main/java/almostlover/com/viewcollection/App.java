@@ -1,15 +1,8 @@
 package almostlover.com.viewcollection;
 
-import almostlover.com.viewcollection.bean.db.room.AppDatabase;
-import almostlover.com.viewcollection.bean.db.room.RoomSearBean;
-import almostlover.com.viewcollection.bean.db.room.SearchDao;
-import almostlover.com.viewcollection.utils.MathUtils;
+import almostlover.com.viewcollection.utils.lifecyclercallback.ImpLifeCyclerCallBack;
 import android.app.Application;
-import android.arch.persistence.room.Room;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
-import com.bumptech.glide.request.target.SimpleTarget;
-import com.bumptech.glide.request.transition.Transition;
 import com.greendao.gen.DaoMaster;
 import com.greendao.gen.DaoSession;
 
@@ -20,13 +13,18 @@ public class App extends Application {
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
     public static App instances;
+
     @Override
     public void onCreate() {
         super.onCreate();
         instances = this;
 
         setDatabase();
+        regisiterLifeCycler();
+    }
 
+    private void regisiterLifeCycler() {
+        registerActivityLifecycleCallbacks(new ImpLifeCyclerCallBack());
     }
 
 
@@ -44,7 +42,8 @@ public class App extends Application {
         mDaoMaster = new DaoMaster(db);
         mDaoSession = mDaoMaster.newSession();
     }
-    public static App getInstances(){
+
+    public static App getInstances() {
         return instances;
     }
 
