@@ -11,8 +11,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
+import cn.com.almostlover.annotation.TestAPT
 
-
+@TestAPT
 class WallPagerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,9 @@ class WallPagerActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.addFlags(WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER)
+        window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)//禁止截屏
         setContentView(almostlover.com.viewcollection.R.layout.activity_wall_pager)
+
         val tv = findViewById<TextView>(R.id.tv)
         val root_view = findViewById<ConstraintLayout>(R.id.root_view)
         tv.postDelayed({

@@ -1,5 +1,6 @@
 package almostlover.com.viewcollection.utils;
 
+import almostlover.com.viewcollection.App;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -18,7 +19,7 @@ import android.util.DisplayMetrics;
 public class UIUtils {
 
     private static Context getContext() {
-        return null;
+        return App.getInstances();
     }
 
     private static Resources getResources() {
