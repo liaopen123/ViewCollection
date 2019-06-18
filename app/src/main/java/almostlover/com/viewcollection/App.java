@@ -1,8 +1,11 @@
 package almostlover.com.viewcollection;
 
 import almostlover.com.viewcollection.utils.lifecyclercallback.ImpLifeCyclerCallBack;
+import android.app.Activity;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.widget.Toast;
 import com.greendao.gen.DaoMaster;
 import com.greendao.gen.DaoSession;
 
@@ -13,6 +16,8 @@ public class App extends Application {
     private DaoMaster mDaoMaster;
     private DaoSession mDaoSession;
     public static App instances;
+    private int appCount;
+    private boolean isRunInBackground;
 
     @Override
     public void onCreate() {
@@ -53,5 +58,68 @@ public class App extends Application {
 
     public SQLiteDatabase getDb() {
         return db;
+    }
+
+
+
+    private void initBackgroundCallBack() {
+        registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
+            @Override
+            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
+            }
+
+            @Override
+            public void onActivityStarted(Activity activity) {
+                appCount++;
+                if (isRunInBackground) {
+                    //应用从后台回到前台 需要做的操作
+                    back2App(activity);
+                }
+            }
+
+            @Override
+            public void onActivityResumed(Activity activity) {
+            }
+
+            @Override
+            public void onActivityPaused(Activity activity) {
+            }
+
+            @Override
+            public void onActivityStopped(Activity activity) {
+                appCount--;
+                if (appCount == 0) {
+                    //应用进入后台 需要做的操作
+                    Toast.makeText(activity, "APP进入后台", Toast.LENGTH_SHORT).show();
+                    leaveApp(activity);
+                }
+            }
+
+            @Override
+            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+            }
+
+            @Override
+            public void onActivityDestroyed(Activity activity) {
+            }
+        });
+    }
+
+    /**
+     * 从后台回到前台需要执行的逻辑
+     *
+     * @param activity
+     */
+    private void back2App(Activity activity) {
+        isRunInBackground = false;
+    }
+
+    /**
+     * 离开应用 压入后台或者退出应用
+     *
+     * @param activity
+     */
+    private void leaveApp(Activity activity) {
+        isRunInBackground = true;
     }
 }
