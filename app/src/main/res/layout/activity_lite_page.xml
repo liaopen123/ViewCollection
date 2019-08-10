@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<almostlover.com.viewcollection.views.litepage.LitePage
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:id="@+id/viewgroup"
+        android:layout_height="match_parent"
+        tools:context=".activitys.litepage.LitePageActivity">
+
+
+    <View
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/view1"
+            android:layout_width="150dp" android:layout_height="150dp" android:background="#ff0000"
+        />
+
+    <View
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/view2"
+            android:layout_marginLeft="200dp"
+            android:layout_width="150dp" android:layout_height="150dp" android:background="#ff00ff"
+    />
+
+    <View
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/view3"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="100dp"
+            android:layout_width="150dp" android:layout_height="150dp" android:background="#0000ff"
+    />
+
+    <View
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/view4"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_width="150dp" android:layout_height="150dp" android:background="#00ff00"
+    />
+
+
+</almostlover.com.viewcollection.views.litepage.LitePage>

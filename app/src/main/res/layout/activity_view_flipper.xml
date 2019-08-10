@@ -76,6 +76,7 @@
 
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:text="开始"
-            android:id="@+id/btn" tools:layout_editor_absoluteY="646dp" tools:layout_editor_absoluteX="161dp"/>
+            android:id="@+id/btn" tools:layout_editor_absoluteY="646dp" tools:layout_editor_absoluteX="161dp"
+            tools:ignore="MissingConstraints"/>
 
 </android.support.constraint.ConstraintLayout>

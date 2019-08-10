@@ -31,7 +31,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "almostlover.com.viewcollection"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -130,3 +130,20 @@ variants.all { variant ->
     }
 
 }
+
+task clearJar(type: Delete) {
+    delete 'libs/ishowtoast.jar'
+}
+task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+    //指定生成的jar名
+    baseName 'ishowtoast'
+    //从哪里打包class文件
+    from('build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/debug/cn/com/almostlover/dexlibs/')
+    //打包到jar后的目录结构
+    into('cn/com/almostlover/dexlibs/')
+    //去掉不需要打包的目录和文件
+    exclude('test/', 'IShowToast.class', 'BuildConfig.class', 'R.class')
+    //去掉R$开头的文件
+    exclude { it.name.startsWith('R$') }
+}
+makeJar.dependsOn(clearJar, build)

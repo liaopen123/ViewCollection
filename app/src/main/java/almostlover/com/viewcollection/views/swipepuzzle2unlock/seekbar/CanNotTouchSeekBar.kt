@@ -3,12 +3,13 @@ package com.shunguang.vip.view.swipepuzzle2unlock.seekbar
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
+import android.support.v7.widget.AppCompatSeekBar
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.SeekBar
 
-class CanNotTouchSeekBar(context: Context, attr: AttributeSet, def: Int) : SeekBar(context, attr, def) {
+class CanNotTouchSeekBar(context: Context, attr: AttributeSet, def: Int) : AppCompatSeekBar(context, attr, def) {
 
     private var currentProgress: Int = 0
     private val TAG: String? = "CanNotTouchSeekBar"

@@ -3,6 +3,7 @@ package almostlover.com.viewcollection.activitys
 import almostlover.com.viewcollection.views.addcartview.cart_type_evaluator.AddCartTypeEnvaluator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.animation.TimeInterpolator
 import android.graphics.PointF
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -36,7 +37,7 @@ class JDAddCartTransfromActivity : AppCompatActivity() {
 
             val animatorX = ObjectAnimator.ofFloat(iv_move, "scaleX", 1f, 0.1f)
             val animatorY = ObjectAnimator.ofFloat(iv_move, "scaleY", 1f, 0.1f)
-            animatorX.setInterpolator ( AnticipateInterpolator() )
+            animatorX.setInterpolator (AnticipateInterpolator() as TimeInterpolator?)
             animatorY.setInterpolator ( AnticipateInterpolator() )
             val controlPonit = PointF(0f, 0F)
             val ofObject = ObjectAnimator.ofObject(

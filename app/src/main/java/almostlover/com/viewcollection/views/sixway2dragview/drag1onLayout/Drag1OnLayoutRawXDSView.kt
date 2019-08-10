@@ -2,12 +2,13 @@ package almostlover.com.viewcollection.views.sixway2dragview.drag1onLayout
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.support.v7.widget.AppCompatImageView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 import android.widget.ImageView
 //通过rawX 来进行位移的
-class Drag1OnLayoutRawXDSView(context: Context, attrs: AttributeSet) : ImageView(context, attrs) {
+class Drag1OnLayoutRawXDSView(context: Context, attrs: AttributeSet) : AppCompatImageView(context, attrs) {
 
 
     private var offsetX: Float = 0.0f

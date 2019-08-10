@@ -29,7 +29,7 @@ public class App extends Application {
     }
 
     private void regisiterLifeCycler() {
-        registerActivityLifecycleCallbacks(new ImpLifeCyclerCallBack());
+//        registerActivityLifecycleCallbacks(new ImpLifeCyclerCallBack());
     }
 
 

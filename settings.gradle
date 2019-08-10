@@ -1,1 +1,1 @@
-include ':app', ':annotation', ':javassist', ':apt'
+include ':app', ':annotation', ':javassist', ':apt', ':dexlibs'
