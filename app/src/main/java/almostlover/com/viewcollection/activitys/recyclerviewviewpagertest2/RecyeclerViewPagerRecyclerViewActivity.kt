@@ -1,34 +1,26 @@
-package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler
+package almostlover.com.viewcollection.activitys.recyclerviewviewpagertest2
 
 import almostlover.com.viewcollection.R
+import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.MainAdapter
+import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.PagerFragment
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeElectricalTabAdpter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeTopBannerAdpter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeViewPagerAdapter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.SimpleCardFragment
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.view.ViewGroup
+import android.support.v7.app.AppCompatActivity
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
-import kotlinx.android.synthetic.main.activity_recyecler_view_pager_recycler_view.*
-import kotlinx.android.synthetic.main.activity_recyecler_view_pager_recycler_view.rv
 import kotlinx.android.synthetic.main.activity_recyecler_view_pager_test.*
 
 /**
  * recyclerview  嵌套 ViewPager  再在里面嵌套 recyclerview
  */
-class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.PagerChangeListener {
-    companion object{
-         var isHeadSteak: Boolean = false
-    }
+class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(), MainAdapter.PagerChangeListener {
     var TAG = "RecyeclerViewPagerRecyclerViewActivity"
-    private val mFragments: ArrayList<Fragment> = ArrayList()
     override fun pagerChange(position: Int) {
         currentFragment = fragments[position] as PagerFragment
     }
@@ -39,60 +31,62 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.P
     private lateinit var currentFragment: PagerFragment
     private lateinit var mainAdapter: HomeTopBannerAdpter
     var data = ArrayList<String>()
-    var  fragments = mutableListOf<PagerFragment>()
-
-
+    var fragments = mutableListOf<PagerFragment>()
+    private val mFragments: ArrayList<Fragment> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recyecler_view_pager_recycler_view)
-        data.add("推荐")
-        data.add("男装")
-        data.add("女装")
-        data.add("童装")
-        data.add("鞋子")
+        setContentView(R.layout.activity_recyecler_view_pager_test)
+        data.add("推荐1")
+        data.add("男装1")
+        data.add("女装1")
+        data.add("童装1")
+        data.add("鞋子1")
 
-
-
-
-
-
-         virtualLayoutManager = VirtualLayoutManager(this)
-         delegateAdapter = DelegateAdapter(virtualLayoutManager)
+        val layoutParams = viewpager.layoutParams
+        layoutParams.height = resources!!.displayMetrics!!.heightPixels
+        mFragments.add(SimpleCardFragment.getInstance("gaga"))
+        mFragments.add(SimpleCardFragment.getInstance("gaga"))
+        mFragments.add(SimpleCardFragment.getInstance("gaga"))
+        mFragments.add(SimpleCardFragment.getInstance("gaga"))
+        var mAdapter = MyPagerAdapter(supportFragmentManager)
+        viewpager.adapter = (mAdapter)
+        virtualLayoutManager = VirtualLayoutManager(this)
+        delegateAdapter = DelegateAdapter(virtualLayoutManager)
         rv.layoutManager = virtualLayoutManager
         rv.adapter = delegateAdapter
         rv.isNestedScrollingEnabled = true
 
+        for (i in data.indices) {
+            fragments.add(PagerFragment.newInstance(data[i]))
+        }
 
-
+        //屏幕高度
+        val dm = applicationContext.resources.displayMetrics
+        for (i in data.indices) {
+            fragments.add(PagerFragment.newInstance(data[i]))
+        }
         mainAdapter = HomeTopBannerAdpter(this)
         homeTabAdapter = HomeElectricalTabAdpter(this)
         val homeViewPagerAdapter = HomeViewPagerAdapter(this)
         delegateAdapter.addAdapter(mainAdapter)
         delegateAdapter.addAdapter(homeTabAdapter)
-        delegateAdapter.addAdapter(homeViewPagerAdapter)
+//        delegateAdapter.addAdapter(homeViewPagerAdapter)
         homeViewPagerAdapter.notifyHasData()
-        rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                Log.e(TAG,"isSticky:"+homeTabAdapter.isSticky())
-                if(homeTabAdapter.isSticky()){
-//                    rv.isHeadSteak()
-                    isHeadSteak = true
-                    Log.e(TAG,"吸顶了")
-                }else{
-                    Log.e(TAG,"没有吸顶了")
-                    isHeadSteak = false
-                }
-                super.onScrolled(recyclerView, dx, dy)
-            }
-        })
+//        rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+//                Log.e(TAG,"isSticky:"+homeTabAdapter.isSticky())
+//                if(homeTabAdapter.isSticky()){
+//                }
+//                super.onScrolled(recyclerView, dx, dy)
+//            }
+//        })
     }
-
 
 
     private inner class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
-        private val mTitles = arrayOf("11", "22", "33")
+        private val mTitles = arrayOf("11", "22", "33","44")
 
         override fun getCount(): Int {
             return mFragments.size

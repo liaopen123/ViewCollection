@@ -1,5 +1,6 @@
 package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.ultrarecyclerview
 
+import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.ultrarecyclerview.OutRecyclerView.Companion.isIntercept2Inner
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.RecyclerView.*
@@ -13,25 +14,25 @@ import android.support.v7.widget.LinearLayoutManager
 class InnerRecyclerView(context: Context, attr:AttributeSet) :RecyclerView(context,attr){
     val TAG = "InnerRecyclerView"
    fun setOnHeadLister(){
-       if (OutRecyclerView.isIntercept2Inner) {
-//           parent.requestDisallowInterceptTouchEvent(true)
-       }
-//       addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//
-//           override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-//               super.onScrolled(recyclerView, dx, dy)
-//               Log.i( TAG, "--------------------------------------")
-//               val layoutManager = recyclerView.layoutManager as LinearLayoutManager?
-//               val firstCompletelyVisibleItemPosition = layoutManager!!.findFirstCompletelyVisibleItemPosition()
-//               Log.i( TAG, "firstCompletelyVisibleItemPosition: $firstCompletelyVisibleItemPosition")
-//               if (firstCompletelyVisibleItemPosition == 0)
-//                   Log.i( TAG, "滑动到顶部")
-//               val lastCompletelyVisibleItemPosition = layoutManager.findLastCompletelyVisibleItemPosition()
-//               Log.i( TAG, "lastCompletelyVisibleItemPosition: $lastCompletelyVisibleItemPosition")
-//               if (lastCompletelyVisibleItemPosition == layoutManager.itemCount - 1)
-//                   Log.i( TAG, "滑动到底部")
-//           }
-//       })
+
+       addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+           override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+               super.onScrolled(recyclerView, dx, dy)
+               Log.i( TAG, "--------------------------------------")
+               val layoutManager = recyclerView.layoutManager as LinearLayoutManager?
+               val firstCompletelyVisibleItemPosition = layoutManager!!.findFirstCompletelyVisibleItemPosition()
+               Log.i( TAG, "firstCompletelyVisibleItemPosition: $firstCompletelyVisibleItemPosition")
+               if (firstCompletelyVisibleItemPosition == 0) {
+                   Log.i(TAG, "滑动到顶部")
+                   isIntercept2Inner = false
+               }
+               val lastCompletelyVisibleItemPosition = layoutManager.findLastCompletelyVisibleItemPosition()
+               Log.i( TAG, "lastCompletelyVisibleItemPosition: $lastCompletelyVisibleItemPosition")
+               if (lastCompletelyVisibleItemPosition == layoutManager.itemCount - 1)
+                   Log.i( TAG, "滑动到底部")
+           }
+       })
     }
 
 
