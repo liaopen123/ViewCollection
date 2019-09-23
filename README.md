@@ -1,4 +1,5 @@
 # ViewCollection
+![img](https://travis-ci.org/liaopen123/ViewCollection.svg?branch=master)
 重新整理view
 ## 仿饿了么滚动隐藏 停止滚动显示
 ![](https://github.com/liaopen123/ImageRepo/blob/master/app/src/main/res/raw/scroll.gif?raw=true) 
