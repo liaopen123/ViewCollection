@@ -40,7 +40,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("./view.keys")
+            storeFile file("./view.jks")
             storePassword '111111'
             keyAlias 'viewcollection'
             keyPassword '111111'
