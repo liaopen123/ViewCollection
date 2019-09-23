@@ -21,7 +21,7 @@ deploy:
   # 除此之外，Travis CI还支持发布到fir.im、AWS、Google App Engine等
   provider: releases
   # Github oauth token
-  api_key: "$GIT_TOKEN"
+  api_key: $GIT_TOKEN
   # 部署文件路径；对于Android就部署生成的 apk 文件
   file: "FILE TO UPLOAD"
     - app/build/outputs/apk/release/app-release.apk
