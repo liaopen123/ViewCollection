@@ -1,7 +1,6 @@
-package com.example.cyandev.androidplayground.widget;
+package almostlover.com.viewcollection.activitys.fancybehavior.behavior;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Handler;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewCompat;
@@ -10,16 +9,16 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.Scroller;
-import android.widget.Toast;
 
-import com.example.cyandev.androidplayground.R;
 
 import java.lang.ref.WeakReference;
+
+import almostlover.com.viewcollection.R;
 
 /**
  * Created by cyandev on 2016/11/3.
  */
-public class HeaderScrollingBehavior extends CoordinatorLayout.Behavior<RecyclerView> {
+public class HeaderScrollingBehavior1 extends CoordinatorLayout.Behavior<RecyclerView> {
 
     private final Context context;
     private boolean isExpanded = false;
@@ -30,7 +29,7 @@ public class HeaderScrollingBehavior extends CoordinatorLayout.Behavior<Recycler
     private Handler handler;
     private String TAG = getClass().getSimpleName();
 
-    public HeaderScrollingBehavior(Context context, AttributeSet attrs) {
+    public HeaderScrollingBehavior1(Context context, AttributeSet attrs) {
         super(context, attrs);
         scroller = new Scroller(context);
         handler = new Handler();

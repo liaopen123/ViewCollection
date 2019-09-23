@@ -1,4 +1,4 @@
-package com.example.cyandev.androidplayground.widget;
+package almostlover.com.viewcollection.activitys.fancybehavior.behavior;
 
 import android.animation.ArgbEvaluator;
 import android.content.Context;
@@ -7,19 +7,20 @@ import android.support.design.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.example.cyandev.androidplayground.R;
 
 import java.lang.ref.WeakReference;
+
+import almostlover.com.viewcollection.R;
 
 /**
  * Created by cyandev on 2016/12/14.
  */
-public class HeaderFloatBehavior extends CoordinatorLayout.Behavior<View> {
+public class HeaderFloatBehavior1 extends CoordinatorLayout.Behavior<View> {
 
     private WeakReference<View> dependentView;
     private ArgbEvaluator argbEvaluator;
 
-    public HeaderFloatBehavior(Context context, AttributeSet attrs) {
+    public HeaderFloatBehavior1(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         argbEvaluator = new ArgbEvaluator();
