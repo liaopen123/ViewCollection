@@ -19,6 +19,8 @@
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".activitys.fancybehavior.ScrollingActivity">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
