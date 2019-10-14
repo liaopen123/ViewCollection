@@ -13,9 +13,11 @@
             <option value="$PROJECT_DIR$/apt" />
             <option value="$PROJECT_DIR$/dexlibs" />
             <option value="$PROJECT_DIR$/javassist" />
+            <option value="$PROJECT_DIR$/network" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

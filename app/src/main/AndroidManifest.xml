@@ -18,44 +18,50 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.fancybehavior.ScrollingActivity">
-
-
+        <activity android:name=".activitys.scroller.Scroller01Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activitys.nestedscrolling.NestedScrollingActivity">
 
         </activity>
-        <activity android:name=".activitys.recyelerviewpagerecycler.RecyeclerViewPagerRecyclerViewActivity">
-
-        </activity>
-        <activity android:name=".activitys.recyclerviewviewpagertest2.RecyeclerViewPagerRecyclerViewActivity"></activity>
-        <activity android:name=".activitys.litepage.LitePageActivity"></activity>
-        <activity android:name=".activitys.recyclerview_recycler.RecyclerViewHowToRecycleActivity"></activity>
-        <activity android:name=".activitys.wallpaper.WallPagerActivity"></activity>
-        <activity android:name=".annotation.AnnotationActivity"></activity>
-        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity"></activity>
-        <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity"></activity>
-        <activity android:name=".aspectj01.Main3Activity"></activity>
-        <activity android:name=".activitys.TitleTransformActivity"></activity>
-        <activity android:name=".aspectj.AspectJ01Activity"></activity>
-        <activity android:name=".activitys.DargLayoutActivity"></activity>
-        <activity android:name=".activitys.FiveWayTimeCountActivity"></activity>
-        <activity android:name=".activitys.DoubleSeekBarActivity"></activity>
-        <activity android:name=".activitys.DragVerifyActivity"></activity>
-        <activity android:name=".activitys.TagFlexBoxActivity"></activity>
-        <activity android:name=".activitys.bezierline.BezierLineActivity"></activity>
-        <activity android:name=".activitys.anim.ObjectAnimatorActivity"></activity>
-        <activity android:name=".activitys.anim.TweenAnimActivity"></activity>
-        <activity android:name=".activitys.JDAddCartTransfromActivity"></activity>
-        <activity android:name=".activitys.ViewFlipperActivity"></activity>
-        <activity android:name=".activitys.viewdrag.SixWay2DragViewActivity"></activity>
-        <activity android:name=".activitys.CakeViewActivity"></activity>
-        <activity android:name=".activitys.LoginActivity"></activity>
-        <activity android:name=".activitys.ElmeShyImageActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".activitys.fancybehavior.ScrollingActivity" />
+        <activity android:name=".activitys.recyelerviewpagerecycler.RecyeclerViewPagerRecyclerViewActivity" />
+        <activity android:name=".activitys.recyclerviewviewpagertest2.RecyeclerViewPagerRecyclerViewActivity" />
+        <activity android:name=".activitys.litepage.LitePageActivity" />
+        <activity android:name=".activitys.recyclerview_recycler.RecyclerViewHowToRecycleActivity" />
+        <activity android:name=".activitys.wallpaper.WallPagerActivity" />
+        <activity android:name=".annotation.AnnotationActivity" />
+        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity" />
+        <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity" />
+        <activity android:name=".aspectj01.Main3Activity" />
+        <activity android:name=".activitys.TitleTransformActivity" />
+        <activity android:name=".aspectj.AspectJ01Activity" />
+        <activity android:name=".activitys.DargLayoutActivity" />
+        <activity android:name=".activitys.FiveWayTimeCountActivity" />
+        <activity android:name=".activitys.DoubleSeekBarActivity" />
+        <activity android:name=".activitys.DragVerifyActivity" />
+        <activity android:name=".activitys.TagFlexBoxActivity" />
+        <activity android:name=".activitys.bezierline.BezierLineActivity" />
+        <activity android:name=".activitys.anim.ObjectAnimatorActivity" />
+        <activity android:name=".activitys.anim.TweenAnimActivity" />
+        <activity android:name=".activitys.JDAddCartTransfromActivity" />
+        <activity android:name=".activitys.ViewFlipperActivity" />
+        <activity android:name=".activitys.viewdrag.SixWay2DragViewActivity" />
+        <activity android:name=".activitys.CakeViewActivity" />
+        <activity android:name=".activitys.LoginActivity" />
+        <activity android:name=".activitys.ElmeShyImageActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
