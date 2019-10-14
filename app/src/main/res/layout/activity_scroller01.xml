@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activitys.scroller.Scroller01Activity">
+        tools:context=".activitys.scroller.activity.Scroller01Activity">
 
     <almostlover.com.viewcollection.activitys.scroller.view.ScrollViewPager
             android:layout_width="match_parent"

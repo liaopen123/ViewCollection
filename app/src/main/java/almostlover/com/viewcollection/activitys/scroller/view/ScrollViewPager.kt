@@ -9,7 +9,9 @@ import android.view.ViewConfiguration
 import android.view.ViewGroup
 import android.widget.Scroller
 
-
+/**
+ * 参照:https://blog.csdn.net/hehe_heh/article/details/80255289
+ */
 class ScrollViewPager @JvmOverloads constructor(
     context: Context,
     attributeSet: AttributeSet? = null,
