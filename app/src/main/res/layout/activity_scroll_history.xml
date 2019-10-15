@@ -6,7 +6,8 @@
         android:layout_height="match_parent"
         tools:context=".activitys.scroller.activity.ScrollHistoryActivity">
 
-    <ScrollView
+    <almostlover.com.viewcollection.activitys.scroller.view.OutterScrollView
+            android:id="@+id/outtersv"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -21,8 +22,9 @@
                     android:text="上"
                     android:textSize="30dp" />
 
-            <ScrollView
+            <almostlover.com.viewcollection.activitys.scroller.view.CustomScrollView
                     android:layout_width="wrap_content"
+                    android:id="@+id/innersv"
                     android:layout_height="70dp">
 
                 <LinearLayout
@@ -78,17 +80,17 @@
                             android:text="content"
                             android:textSize="20dp" />
                 </LinearLayout>
-            </ScrollView>
+            </almostlover.com.viewcollection.activitys.scroller.view.CustomScrollView>
 
 
             <TextView
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
-                    android:text="上"
+                    android:text="下"
                     android:textSize="30dp" />
 
         </LinearLayout>
 
-    </ScrollView>
+    </almostlover.com.viewcollection.activitys.scroller.view.OutterScrollView>
 
 </LinearLayout>
