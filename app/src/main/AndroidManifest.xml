@@ -18,6 +18,13 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activitys.autoscrollbgpackage.AutoScrollBGActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".activitys.scroller.activity.ScrollHistoryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,10 +39,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity">
-
-        </activity>
-        <activity android:name=".activitys.nestedscrolling.NestedScrollingActivity"></activity>
+        <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity"></activity>
+        <activity android:name=".activitys.nestedscrolling.NestedScrollingActivity" />
         <activity android:name=".activitys.fancybehavior.ScrollingActivity" />
         <activity android:name=".activitys.recyelerviewpagerecycler.RecyeclerViewPagerRecyclerViewActivity" />
         <activity android:name=".activitys.recyclerviewviewpagertest2.RecyeclerViewPagerRecyclerViewActivity" />

@@ -6,6 +6,7 @@ import android.os.Handler
 import android.os.Message
 import android.util.AttributeSet
 import android.view.MotionEvent
+import android.view.View
 import android.widget.ScrollView
 
 class CustomScrollView : ScrollView {
@@ -145,5 +146,13 @@ class CustomScrollView : ScrollView {
         mOnScrollChangeListener = onScrollChangeListener
     }
 
+
+    override fun scrollBy(x: Int, y: Int) {
+        if ((y > 0 && isTop) || (y < 0 && isBottom)) {
+            (parent as View).scrollBy(x, y)
+        } else {
+            super.scrollBy(x, y)
+        }
+    }
 
 }
