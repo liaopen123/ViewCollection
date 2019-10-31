@@ -18,28 +18,25 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.autoscrollbgpackage.AutoScrollBGActivity">
+        <activity android:name=".activitys.autoviewsizeviewpagerheight.AutoSizeHeightActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".activitys.scroller.activity.ScrollHistoryActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".activitys.dlna.CyberGarageActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity android:name=".activitys.autoscrollbgpackage.AutoScrollBGActivity"></activity>
+        <activity android:name=".activitys.scroller.activity.ScrollHistoryActivity">
+
         </activity>
         <activity android:name=".activitys.scroller.activity.Scroller01Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity"></activity>
+        <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity" />
         <activity android:name=".activitys.nestedscrolling.NestedScrollingActivity" />
         <activity android:name=".activitys.fancybehavior.ScrollingActivity" />
         <activity android:name=".activitys.recyelerviewpagerecycler.RecyeclerViewPagerRecyclerViewActivity" />
