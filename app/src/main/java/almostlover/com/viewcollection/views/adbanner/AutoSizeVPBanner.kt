@@ -45,7 +45,7 @@ class AutoSizeVPBanner @JvmOverloads constructor(
 
     }
 
-    private fun setData(urls: ArrayList<String>) {
+    fun setData(urls: ArrayList<String>) {
         this.urls = urls
         var viewpager = viewpager!!
 

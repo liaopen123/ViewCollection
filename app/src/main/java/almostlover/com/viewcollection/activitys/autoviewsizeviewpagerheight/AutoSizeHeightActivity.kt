@@ -20,7 +20,7 @@ import java.lang.Exception
 
 
 class AutoSizeHeightActivity : AppCompatActivity() {
-    private var neverScrolled: Boolean =true
+    private var neverScrolled: Boolean = true
     private lateinit var mContext: AutoSizeHeightActivity
     var urls: ArrayList<String> = ArrayList()
     var heights: ArrayList<Int> = ArrayList()
@@ -37,117 +37,8 @@ class AutoSizeHeightActivity : AppCompatActivity() {
         mContext = this
 
 
+        avb.setData(urls)
 
-
-
-
-        viewpager.adapter = AdAdapter()
-
-        viewpager.addOnPageChangeListener(object :ViewPager.OnPageChangeListener{
-            override fun onPageScrolled(p0: Int, positionOffset: Float, p2: Int) {
-          lphLog("onPageScrolled:positionOffset:$positionOffset,,position:$p0,heights:$heights")
-                try {
-                    if(heights.size>0) {
-
-
-                        val height =
-                            ((if (heights[p0] === 0) 100 else heights[p0]) * (1 - positionOffset) + (if (heights[p0+1] === 0) 100 else heights[p0+1]) * positionOffset).toInt()
-
-                        var params: ViewGroup.LayoutParams = viewpager.layoutParams
-                        params.height =height
-                        viewpager.layoutParams = params
-                    }
-                }catch(e:Exception){
-
-                }
-
-            }
-
-            override fun onPageSelected(p0: Int) {
-
-            }
-
-            override fun onPageScrollStateChanged(p0: Int) {
-            }
-
-        })
-
-        initIndicator()
     }
-
-    private fun initIndicator() {
-        if (urls.size<2) {
-            indicator.visibility=View.GONE
-            return
-        }else{
-            indicator.visibility=View.VISIBLE
-            indicator.setViewPager(viewpager)
-        }
-    }
-
-
-    internal inner class AdAdapter : PagerAdapter() {
-
-        override fun getCount(): Int {
-            return urls.size
-        }
-
-        override fun isViewFromObject(view: View, `object`: Any): Boolean {
-            return view === `object`
-        }
-
-        override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-            container.removeView(`object` as View)
-        }
-
-        override fun instantiateItem(container: ViewGroup, position: Int): Any {
-            val advInfo = urls[position]
-
-            val rootView = mContext.layoutInflater.inflate(R.layout.viewpager_item, null)
-            val simpleDraweeView = rootView.findViewById(R.id.simpleDraweeView) as ImageView
-            val params = ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-            )
-            container.addView(rootView, params)
-
-
-            val simpleTarget = object : SimpleTarget<Drawable>() {
-               override fun onResourceReady(resource: Drawable, transition: Transition<in Drawable>?) {
-                    //这里可以做复杂的图片变换处理，如下只是简单的显示在imageView上
-                   simpleDraweeView.setImageDrawable(resource)
-//                   var bitmapDrawable:BitmapDrawable;
-//                   bitmapDrawable.
-
-                   val height =     resource.intrinsicHeight
-                   lphLog("position:$position,,,height:$height")
-                   if(heights.size>position&&heights[position]!=0){
-
-                   }else {
-                       heights.add(position, height)
-                   }
-                   if (neverScrolled) {
-                       notifyViewPageHeight()
-                       neverScrolled =false
-                   }
-
-               }
-            }
-            Glide.with(mContext)
-                .load(advInfo)
-                .into(simpleTarget)
-
-
-            return rootView
-        }
-    }
-
-    private fun notifyViewPageHeight() {
-
-        var params: ViewGroup.LayoutParams = viewpager.layoutParams
-        params.height =heights[0]
-        viewpager.layoutParams = params
-    }
-
 
 }
