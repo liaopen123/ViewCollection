@@ -1,8 +1,10 @@
 package almostlover.com.viewcollection;
 
+import almostlover.com.viewcollection.activitys.screenrecorder.RecordService;
 import almostlover.com.viewcollection.utils.lifecyclercallback.ImpLifeCyclerCallBack;
 import android.app.Activity;
 import android.app.Application;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -26,6 +28,7 @@ public class App extends Application {
 
         setDatabase();
         regisiterLifeCycler();
+        startService(new Intent(this, RecordService.class));
     }
 
     private void regisiterLifeCycler() {
