@@ -11,4 +11,10 @@ public class CakeBean {
     public int pointY;
     public Bitmap bitmap;
 
+    public CakeBean() {
+    }
+
+    public CakeBean(int pointX) {
+        this.pointX = pointX;
+    }
 }

@@ -1,4 +1,4 @@
-package almostlover.com.viewcollection.activitys.screenrecorder;
+package almostlover.com.viewcollection.activitys.screenrecorder.mediacodec;
 
 import android.app.Service;
 import android.content.Intent;

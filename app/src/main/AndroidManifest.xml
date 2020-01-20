@@ -6,10 +6,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
             android:name=".App"
             android:allowBackup="true"
@@ -21,26 +22,32 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.screenrecorder.ScreenRecorderActivity" >
+        <activity android:name=".test.TestJavaActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.autoviewsizeviewpagerheight.AutoSizeHeightActivity">
+        <activity android:name=".webrtc.Class3ClientActivity">
 
         </activity>
-        <activity android:name=".activitys.dlna.CyberGarageActivity">
-
-        </activity>
-        <activity android:name=".activitys.autoscrollbgpackage.AutoScrollBGActivity"></activity>
-        <activity android:name=".activitys.scroller.activity.ScrollHistoryActivity">
-
-        </activity>
-        <activity android:name=".activitys.scroller.activity.Scroller01Activity">
-
-        </activity>
+        <activity android:name=".webrtc.Class2TwoCameraActivity"></activity>
+        <activity android:name=".webrtc.Class1CameraActivity" />
+        <activity android:name=".socket.SocketServer1Activity" />
+        <activity android:name=".socket.SocketServerActivity" />
+        <activity android:name=".socket.SocketTestActivity" />
+        <activity android:name=".views.upfliewebview.LoadLocalHTMLActivity" />
+        <activity android:name=".activitys.sku.SKUActivity" />
+        <activity android:name=".activitys.screenrecorder.mediarecorder.MainActivity" />
+        <activity android:name=".activitys.screenrecorder.MainActivity" />
+        <activity android:name=".activitys.screenrecorder.MediaRecorderActivity" />
+        <activity android:name=".activitys.screenrecorder.ScreenRecorderActivity" />
+        <activity android:name=".activitys.autoviewsizeviewpagerheight.AutoSizeHeightActivity" />
+        <activity android:name=".activitys.dlna.CyberGarageActivity" />
+        <activity android:name=".activitys.autoscrollbgpackage.AutoScrollBGActivity" />
+        <activity android:name=".activitys.scroller.activity.ScrollHistoryActivity" />
+        <activity android:name=".activitys.scroller.activity.Scroller01Activity" />
         <activity android:name=".activitys.nestedscrolling.NestedScrolling01Activity" />
         <activity android:name=".activitys.nestedscrolling.NestedScrollingActivity" />
         <activity android:name=".activitys.fancybehavior.ScrollingActivity" />
@@ -71,8 +78,48 @@
         <activity android:name=".activitys.ElmeShyImageActivity" />
         <activity android:name=".MainActivity" />
 
-        <service android:name=".activitys.screenrecorder.RecordService" />
-        <service android:name=".activitys.screenrecorder.ScreenRecordService" />
+        <service android:name=".activitys.screenrecorder.mediacodec.RecordService" />
+        <service android:name=".activitys.screenrecorder.mediacodec.ScreenRecordService" />
+        <service android:name=".activitys.screenrecorder.mediarecorder.ScreenRecordService1" />
+
+
+
+        <!--管理启动的activity-->
+        <activity android:name="cn.com.almostlover.pushtest.ParseIntentActivity"
+                android:parentActivityName="cn.com.almostlover.pushtest.SplashActivity">
+
+            <intent-filter>
+                <!--todo remember to change to yourself-->
+                <data android:scheme="test"/>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+
+        </activity>
+        <activity
+                android:launchMode="singleTop"
+                android:name="cn.com.almostlover.pushtest.DetailsActivity"
+                android:parentActivityName="cn.com.almostlover.pushtest.SplashActivity">
+
+        </activity>
+        <activity android:name="cn.com.almostlover.pushtest.SplashActivity"/>
+
+        <activity-alias
+                android:name=".LancherActivity"
+                android:label="@string/app_name"
+                android:targetActivity="cn.com.almostlover.pushtest.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity-alias>
+
+        <activity android:name="cn.com.almostlover.pushtest.MainActivity">
+        </activity>
+
     </application>
 
 </manifest>

@@ -38,8 +38,15 @@ class RvUtils {
     class CanNotScrollLinearLayoutManager(context: Context) : LinearLayoutManager(context) {
 
 
+        private var isScrollEnabled = true
+
+
+        fun setScrollEnabled(flag: Boolean) {
+            this.isScrollEnabled = flag
+        }
+
         override fun canScrollVertically(): Boolean {
-            return false
+            return isScrollEnabled && super.canScrollVertically()
         }
     }
 

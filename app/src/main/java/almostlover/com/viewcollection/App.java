@@ -1,6 +1,6 @@
 package almostlover.com.viewcollection;
 
-import almostlover.com.viewcollection.activitys.screenrecorder.RecordService;
+import almostlover.com.viewcollection.activitys.screenrecorder.mediacodec.RecordService;
 import almostlover.com.viewcollection.utils.lifecyclercallback.ImpLifeCyclerCallBack;
 import android.app.Activity;
 import android.app.Application;

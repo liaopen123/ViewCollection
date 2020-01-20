@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".activitys.screenrecorder.MainActivity">
+    <Button
+            android:id="@+id/button_control"
+            android:text="开始"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <RadioButton
+            android:text="sd"
+                android:id="@+id/sd_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <RadioButton
+            android:text="hd"
+                android:id="@+id/hd_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+
+    </RadioGroup>
+
+    <CheckBox
+            android:text="audio"
+            android:id="@+id/audio_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+</LinearLayout>
