@@ -22,17 +22,18 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".test.TestJavaActivity">
+        <activity android:name=".activitys.habiticaloginactivity.activity.HabiticLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".webrtc.Class3ClientActivity">
+        <activity android:name=".test.TestJavaActivity">
 
         </activity>
-        <activity android:name=".webrtc.Class2TwoCameraActivity"></activity>
+        <activity android:name=".webrtc.Class3ClientActivity"></activity>
+        <activity android:name=".webrtc.Class2TwoCameraActivity" />
         <activity android:name=".webrtc.Class1CameraActivity" />
         <activity android:name=".socket.SocketServer1Activity" />
         <activity android:name=".socket.SocketServerActivity" />
@@ -80,46 +81,41 @@
 
         <service android:name=".activitys.screenrecorder.mediacodec.RecordService" />
         <service android:name=".activitys.screenrecorder.mediacodec.ScreenRecordService" />
-        <service android:name=".activitys.screenrecorder.mediarecorder.ScreenRecordService1" />
-
-
-
-        <!--管理启动的activity-->
-        <activity android:name="cn.com.almostlover.pushtest.ParseIntentActivity"
+        <service android:name=".activitys.screenrecorder.mediarecorder.ScreenRecordService1" /> <!-- 管理启动的activity -->
+        <activity
+                android:name="cn.com.almostlover.pushtest.ParseIntentActivity"
                 android:parentActivityName="cn.com.almostlover.pushtest.SplashActivity">
-
             <intent-filter>
-                <!--todo remember to change to yourself-->
-                <data android:scheme="test"/>
-                <action android:name="android.intent.action.VIEW"/>
 
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <!-- todo remember to change to yourself -->
+                <data android:scheme="test" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
-
         </activity>
         <activity
-                android:launchMode="singleTop"
                 android:name="cn.com.almostlover.pushtest.DetailsActivity"
-                android:parentActivityName="cn.com.almostlover.pushtest.SplashActivity">
-
-        </activity>
-        <activity android:name="cn.com.almostlover.pushtest.SplashActivity"/>
+                android:launchMode="singleTop"
+                android:parentActivityName="cn.com.almostlover.pushtest.SplashActivity"></activity>
+        <activity android:name="cn.com.almostlover.pushtest.SplashActivity" />
 
         <activity-alias
                 android:name=".LancherActivity"
                 android:label="@string/app_name"
                 android:targetActivity="cn.com.almostlover.pushtest.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
 
-        <activity android:name="cn.com.almostlover.pushtest.MainActivity">
-        </activity>
+        <activity android:name="cn.com.almostlover.pushtest.MainActivity"></activity>
 
+        <receiver android:name=".activitys.listen_sms.boardcast.BootBroadcastReciver" />
     </application>
 
 </manifest>
