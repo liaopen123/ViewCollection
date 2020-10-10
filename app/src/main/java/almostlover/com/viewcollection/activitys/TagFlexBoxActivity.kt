@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.activitys
 
 import almostlover.com.viewcollection.R
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder

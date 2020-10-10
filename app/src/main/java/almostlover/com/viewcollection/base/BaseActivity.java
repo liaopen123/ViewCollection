@@ -1,9 +1,7 @@
 package almostlover.com.viewcollection.base;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
-
-import java.util.AbstractCollection;
 
 public class BaseActivity extends AppCompatActivity {
     

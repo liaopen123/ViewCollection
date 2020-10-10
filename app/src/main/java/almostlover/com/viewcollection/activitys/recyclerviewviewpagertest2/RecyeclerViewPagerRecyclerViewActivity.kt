@@ -8,10 +8,10 @@ import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.Ho
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeViewPagerAdapter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.SimpleCardFragment
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.alibaba.android.vlayout.DelegateAdapter
 import com.alibaba.android.vlayout.VirtualLayoutManager
 import kotlinx.android.synthetic.main.activity_recyecler_view_pager_test.*
@@ -32,7 +32,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(), MainAdapter.
     private lateinit var mainAdapter: HomeTopBannerAdpter
     var data = ArrayList<String>()
     var fragments = mutableListOf<PagerFragment>()
-    private val mFragments: ArrayList<Fragment> = ArrayList()
+    private val mFragments: ArrayList<androidx.fragment.app.Fragment> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -84,7 +84,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(), MainAdapter.
     }
 
 
-    private inner class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class MyPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
         private val mTitles = arrayOf("11", "22", "33","44")
 
@@ -97,7 +97,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(), MainAdapter.
             return mTitles[position]
         }
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return mFragments.get(position)
         }
     }

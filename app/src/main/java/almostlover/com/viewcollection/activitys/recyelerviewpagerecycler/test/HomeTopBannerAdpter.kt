@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test
 
 import almostlover.com.viewcollection.R
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -49,7 +49,7 @@ class HomeTopBannerAdpter(context: Context?): VBaseAdapter<HomeTopBannerAdpter.T
     }
 
 
-    inner class TopBannerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TopBannerHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
 
          var lly_par: LinearLayout

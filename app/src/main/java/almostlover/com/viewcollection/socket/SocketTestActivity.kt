@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.socket
 
 import almostlover.com.viewcollection.R
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_socket_test.*
 import java.io.*
 import java.net.ServerSocket

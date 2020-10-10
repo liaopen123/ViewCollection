@@ -1,7 +1,7 @@
 package almostlover.com.viewcollection.annotation
 
 import almostlover.com.viewcollection.R
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class AnnotationActivity : AppCompatActivity() {

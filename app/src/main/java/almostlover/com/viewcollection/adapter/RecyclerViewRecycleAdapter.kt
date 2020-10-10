@@ -3,14 +3,14 @@ package almostlover.com.viewcollection.adapter
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.UIUtils
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 
-class RecyclerViewRecycleAdapter(context: Context) : RecyclerView.Adapter<BaseViewHolder>() {
+class RecyclerViewRecycleAdapter(context: Context) : androidx.recyclerview.widget.RecyclerView.Adapter<BaseViewHolder>() {
     val TAG:String = "recycleAdapter"
     var context:Context = context
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): BaseViewHolder {
@@ -32,7 +32,7 @@ class RecyclerViewRecycleAdapter(context: Context) : RecyclerView.Adapter<BaseVi
 
 
 
-class BaseViewHolder(view: View) :RecyclerView.ViewHolder(view){
+class BaseViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view){
 
     init {
         val container = view.findViewById<LinearLayout>(R.id.ll_container)

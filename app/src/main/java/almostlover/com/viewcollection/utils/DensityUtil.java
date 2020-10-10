@@ -3,6 +3,8 @@ package almostlover.com.viewcollection.utils;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import almostlover.com.viewcollection.App;
+
 public class DensityUtil {
 
     private  final String TAG = DensityUtil.class.getSimpleName();
@@ -13,12 +15,13 @@ public class DensityUtil {
     private  float scale = 0.0f;
 
 
-    public DensityUtil(Context context) {
+    public DensityUtil() {
+
         // 获取当前屏幕
         dm = new DisplayMetrics();
 
         //返回当前资源对象的DispatchMetrics信息。
-        dm = context.getApplicationContext().getResources().getDisplayMetrics();
+        dm =   App.getInstances().getResources().getDisplayMetrics();
         // 设置DensityDpi
         dmDensityDpi=dm.densityDpi;
         // setDmDensityDpi(dm.densityDpi);

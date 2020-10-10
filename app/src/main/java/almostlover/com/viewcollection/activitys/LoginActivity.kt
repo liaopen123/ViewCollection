@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.views.interpolator.EaseInOutBackInterpolator
 import android.animation.Animator
 import android.animation.ObjectAnimator
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message

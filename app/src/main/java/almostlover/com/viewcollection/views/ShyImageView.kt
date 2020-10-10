@@ -24,7 +24,7 @@ class ShyImageView : ImageView {
     }
 
     private fun init() {
-        val densityUtil = DensityUtil(context!!)
+        val densityUtil = DensityUtil()
         screenWidth = densityUtil.screenWidth.toFloat()
         Log.e(TAG, "屏幕:$screenWidth")
     }

@@ -35,7 +35,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
 
     signingConfigs {
@@ -76,36 +76,36 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation project(path: ':library')
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
     implementation "org.jetbrains.anko:anko:$anko_version"
     implementation "org.jetbrains.anko:anko-commons:$anko_version"
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'jp.wasabeef:glide-transformations:4.0.1'
-    implementation "org.jetbrains.anko:anko:$anko_version"
-    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+
     implementation 'org.greenrobot:greendao:3.2.2'
     // add library
     implementation 'com.google.android:flexbox:1.0.0'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     // add for room
-    implementation 'android.arch.persistence.room:runtime:1.1.1'
+    implementation 'androidx.room:room-runtime:2.0.0'
     // room 配合 RxJava
-    implementation 'android.arch.persistence.room:rxjava2:1.1.1'
-    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
-    implementation 'org.aspectj:aspectjrt:1.8.1'
+    implementation 'androidx.room:room-rxjava2:2.0.0'
+    annotationProcessor 'androidx.room:room-compiler:2.0.0'
+//    implementation 'org.aspectj:aspectjrt:1.8.1'
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
-    implementation project(path: ':annotation')
-    implementation project(path: ':javassist')
+//    implementation project(path: ':annotation')
+//    implementation project(path: ':javassist')
     implementation('com.alibaba.android:vlayout:1.2.12@aar') {
         transitive = true
     }
-    annotationProcessor project(':apt')
+//    annotationProcessor project(':apt')
     //核心，有了这个app才会处理apt的代码
     implementation 'com.github.anzaizai:EasyRefreshLayout:1.3.1'
     implementation files('libs/kxml2-min-2.3.0.jar')
@@ -130,66 +130,69 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'com.orhanobut:logger:2.1.1'
 
-}
-
-
-final def log = project.logger
-final def variants = project.android.applicationVariants
-
-variants.all { variant ->
-    if (!variant.buildType.isDebuggable()) {
-        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
-        return;
-    }
-
-    JavaCompile javaCompile = variant.javaCompile
-    javaCompile.doLast {
-        String[] args = ["-showWeaveInfo",
-                         "-1.5",
-                         "-inpath", javaCompile.destinationDir.toString(),
-                         "-aspectpath", javaCompile.classpath.asPath,
-                         "-d", javaCompile.destinationDir.toString(),
-                         "-classpath", javaCompile.classpath.asPath,
-                         "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
-        log.debug "ajc args: " + Arrays.toString(args)
-        MessageHandler handler = new MessageHandler(true);
-        new Main().run(args, handler);
-        for (IMessage message : handler.getMessages(null, true)) {
-            switch (message.getKind()) {
-                case IMessage.ABORT:
-                case IMessage.ERROR:
-                case IMessage.FAIL:
-                    log.error message.message, message.thrown
-                    break;
-                case IMessage.WARNING:
-                    log.warn message.message, message.thrown
-                    break;
-                case IMessage.INFO:
-                    log.info message.message, message.thrown
-                    break;
-                case IMessage.DEBUG:
-                    log.debug message.message, message.thrown
-                    break;
-            }
-        }
-    }
+    //
+    implementation 'com.felipecsl.asymmetricgridview:library:2.0.1'
 
 }
 
 
-task clearJar(type: Delete) {
-    delete 'libs/ishowtoast.jar'
-}
-task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
-    //指定生成的jar名
-    baseName 'ishowtoast'
-    //从哪里打包class文件
-    from('build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/debug/cn/com/almostlover/dexlibs/')
-    //打包到jar后的目录结构
-    into('cn/com/almostlover/dexlibs/')
-    //去掉不需要打包的目录和文件
-    exclude('test/', 'IShowToast.class', 'BuildConfig.class', 'R.class')
-    //去掉R$开头的文件
-    exclude { it.name.startsWith('R$') }
-}
-makeJar.dependsOn(clearJar, build)
+//final def log = project.logger
+//final def variants = project.android.applicationVariants
+//
+//variants.all { variant ->
+//    if (!variant.buildType.isDebuggable()) {
+//        log.debug("Skipping non-debuggable build type '${variant.buildType.name}'.")
+//        return;
+//    }
+//
+//    JavaCompile javaCompile = variant.javaCompile
+//    javaCompile.doLast {
+//        String[] args = ["-showWeaveInfo",
+//                         "-1.5",
+//                         "-inpath", javaCompile.destinationDir.toString(),
+//                         "-aspectpath", javaCompile.classpath.asPath,
+//                         "-d", javaCompile.destinationDir.toString(),
+//                         "-classpath", javaCompile.classpath.asPath,
+//                         "-bootclasspath", project.android.bootClasspath.join(File.pathSeparator)]
+//        log.debug "ajc args: " + Arrays.toString(args)
+//        MessageHandler handler = new MessageHandler(true);
+//        new Main().run(args, handler);
+//        for (IMessage message : handler.getMessages(null, true)) {
+//            switch (message.getKind()) {
+//                case IMessage.ABORT:
+//                case IMessage.ERROR:
+//                case IMessage.FAIL:
+//                    log.error message.message, message.thrown
+//                    break;
+//                case IMessage.WARNING:
+//                    log.warn message.message, message.thrown
+//                    break;
+//                case IMessage.INFO:
+//                    log.info message.message, message.thrown
+//                    break;
+//                case IMessage.DEBUG:
+//                    log.debug message.message, message.thrown
+//                    break;
+//            }
+//        }
+//    }
+//
+//}
+
+//
+//task clearJar(type: Delete) {
+//    delete 'libs/ishowtoast.jar'
+//}
+//task makeJar(type: org.gradle.api.tasks.bundling.Jar) {
+//    //指定生成的jar名
+//    baseName 'ishowtoast'
+//    //从哪里打包class文件
+//    from('build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/debug/cn/com/almostlover/dexlibs/')
+//    //打包到jar后的目录结构
+//    into('cn/com/almostlover/dexlibs/')
+//    //去掉不需要打包的目录和文件
+//    exclude('test/', 'IShowToast.class', 'BuildConfig.class', 'R.class')
+//    //去掉R$开头的文件
+//    exclude { it.name.startsWith('R$') }
+//}
+//makeJar.dependsOn(clearJar, build)

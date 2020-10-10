@@ -3,7 +3,7 @@ package com.shunguang.vip.view.swipepuzzle2unlock.seekbar
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
-import android.support.v7.widget.AppCompatSeekBar
+import androidx.appcompat.widget.AppCompatSeekBar
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent

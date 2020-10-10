@@ -3,7 +3,7 @@ package almostlover.com.viewcollection.activitys.fancybehavior
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.RvUtils
 import almostlover.com.viewcollection.utils.lphLog
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_scrolling.*
 

@@ -5,13 +5,13 @@ import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.Ho
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeTopBannerAdpter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.HomeViewPagerAdapter
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.SimpleCardFragment
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.ViewGroup
 import com.alibaba.android.vlayout.DelegateAdapter
@@ -28,7 +28,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.P
          var isHeadSteak: Boolean = false
     }
     var TAG = "RecyeclerViewPagerRecyclerViewActivity"
-    private val mFragments: ArrayList<Fragment> = ArrayList()
+    private val mFragments: ArrayList<androidx.fragment.app.Fragment> = ArrayList()
     override fun pagerChange(position: Int) {
         currentFragment = fragments[position] as PagerFragment
     }
@@ -72,8 +72,8 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.P
         delegateAdapter.addAdapter(homeTabAdapter)
         delegateAdapter.addAdapter(homeViewPagerAdapter)
         homeViewPagerAdapter.notifyHasData()
-        rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+        rv.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                 Log.e(TAG,"isSticky:"+homeTabAdapter.isSticky())
                 if(homeTabAdapter.isSticky()){
 //                    rv.isHeadSteak()
@@ -90,7 +90,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.P
 
 
 
-    private inner class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class MyPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
         private val mTitles = arrayOf("11", "22", "33")
 
@@ -103,7 +103,7 @@ class RecyeclerViewPagerRecyclerViewActivity : AppCompatActivity(),MainAdapter.P
             return mTitles[position]
         }
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return mFragments.get(position)
         }
     }

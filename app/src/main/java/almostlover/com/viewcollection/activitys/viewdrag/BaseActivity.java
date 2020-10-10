@@ -1,8 +1,8 @@
 package almostlover.com.viewcollection.activitys.viewdrag;
 
 import almostlover.com.viewcollection.views.sixway2dragview.drag7viewdraghelper.Drag7FloatingDraggerViewGroup;
-import android.support.annotation.LayoutRes;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.LayoutRes;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @author hiphonezhu@gmail.com

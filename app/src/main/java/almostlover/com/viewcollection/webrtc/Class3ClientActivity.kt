@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.webrtc
 
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.bean.CakeBean
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import org.jetbrains.anko.toast
 import org.webrtc.PeerConnectionFactory

@@ -3,8 +3,8 @@ package almostlover.com.viewcollection.views.sixway2dragview.drag7viewdraghelper
 import almostlover.com.viewcollection.R;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.LayoutRes;
-import android.support.v4.widget.ViewDragHelper;
+import androidx.annotation.LayoutRes;
+import androidx.customview.widget.ViewDragHelper;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;

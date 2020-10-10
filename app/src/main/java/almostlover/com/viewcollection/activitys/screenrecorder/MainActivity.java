@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.media.projection.MediaProjectionManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import almostlover.com.viewcollection.R;
 import almostlover.com.viewcollection.activitys.screenrecorder.mediacodec.ScreenRecordService;
-import almostlover.com.viewcollection.activitys.screenrecorder.mediarecorder.ScreenRecordService1;
 
 public class MainActivity extends Activity {
 

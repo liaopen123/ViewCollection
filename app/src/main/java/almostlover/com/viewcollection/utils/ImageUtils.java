@@ -4,11 +4,12 @@ import android.graphics.*;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
-import android.os.Build;
-import android.renderscript.RenderScript;
-import android.support.annotation.*;
 import android.view.View;
-import jp.wasabeef.glide.transformations.internal.Utils;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.FloatRange;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 
 import java.io.*;
 

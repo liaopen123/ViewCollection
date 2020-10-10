@@ -1,7 +1,7 @@
 package almostlover.com.viewcollection.activitys.scroller.activity
 
 import almostlover.com.viewcollection.R
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 class Scroller01Activity : AppCompatActivity() {

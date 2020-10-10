@@ -4,8 +4,8 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.lphLog
 import android.content.Context
 import android.graphics.drawable.Drawable
-import android.support.v4.view.PagerAdapter
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.PagerAdapter
+import androidx.viewpager.widget.ViewPager
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +26,7 @@ class AutoSizeVPBanner @JvmOverloads constructor(
 ) : FrameLayout(context, attributeSet, style) {
 
     private var neverScrolled: Boolean = true
-    var viewpager: ViewPager? = null
+    var viewpager: androidx.viewpager.widget.ViewPager? = null
     var indicator: FlycoPageIndicaor? = null
     var iv_close: ImageView? = null
     var heights: ArrayList<Int> = ArrayList()
@@ -39,7 +39,7 @@ class AutoSizeVPBanner @JvmOverloads constructor(
     private fun initView() {
 
         val view = LayoutInflater.from(context).inflate(R.layout.view_autosize_banner, this, true)
-        viewpager = view.findViewById<ViewPager>(R.id.viewpager)
+        viewpager = view.findViewById<androidx.viewpager.widget.ViewPager>(R.id.viewpager)
         indicator = view.findViewById<FlycoPageIndicaor>(R.id.indicator)
         iv_close = view.findViewById<ImageView>(R.id.iv_close)
 
@@ -54,7 +54,7 @@ class AutoSizeVPBanner @JvmOverloads constructor(
 
         viewpager.adapter = AdAdapter()
 
-        viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        viewpager.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
             override fun onPageScrolled(p0: Int, positionOffset: Float, p2: Int) {
                 lphLog("onPageScrolled:positionOffset:$positionOffset,,position:$p0,heights:$heights")
                 try {
@@ -99,7 +99,7 @@ class AutoSizeVPBanner @JvmOverloads constructor(
 
 
     inner class AdAdapter(
-    ) : PagerAdapter() {
+    ) : androidx.viewpager.widget.PagerAdapter() {
 
         override fun getCount(): Int {
             return urls!!.size

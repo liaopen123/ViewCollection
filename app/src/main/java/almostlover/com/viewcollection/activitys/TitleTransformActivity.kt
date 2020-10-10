@@ -3,7 +3,7 @@ package almostlover.com.viewcollection.activitys
 import almostlover.com.viewcollection.R
 import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_title_transform.*
 
 

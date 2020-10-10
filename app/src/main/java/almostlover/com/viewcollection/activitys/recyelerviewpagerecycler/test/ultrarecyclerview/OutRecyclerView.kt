@@ -1,12 +1,13 @@
 package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.ultrarecyclerview
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 
-class OutRecyclerView(context: Context, attr:AttributeSet) :RecyclerView(context,attr){
+class OutRecyclerView(context: Context, attr:AttributeSet) :
+    androidx.recyclerview.widget.RecyclerView(context,attr){
         val TAG = "OutRecyclerView"
     companion object{
         var  isIntercept2Inner = false

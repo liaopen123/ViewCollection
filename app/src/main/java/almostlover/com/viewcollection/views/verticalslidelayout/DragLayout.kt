@@ -1,9 +1,9 @@
 package almostlover.com.viewcollection.views.verticalslidelayout
 
 import android.content.Context
-import android.support.v4.view.GestureDetectorCompat
-import android.support.v4.view.ViewCompat
-import android.support.v4.widget.ViewDragHelper
+import androidx.core.view.GestureDetectorCompat
+import androidx.core.view.ViewCompat
+import androidx.customview.widget.ViewDragHelper
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.MotionEvent
@@ -14,15 +14,15 @@ class DragLayout(context: Context, attr: AttributeSet) : ViewGroup(context, attr
 
 
     private var gestureDetector: GestureDetectorCompat
-    private var mDragHelper: ViewDragHelper
+    private var mDragHelper: androidx.customview.widget.ViewDragHelper
     private var mViewHeight: Int? = null
     private var view1: View? = null
     public var view2: View? = null
 
 
     init {
-        mDragHelper = ViewDragHelper.create(this, 10f, DragHelperCallback())
-        mDragHelper.setEdgeTrackingEnabled(ViewDragHelper.EDGE_BOTTOM)
+        mDragHelper = androidx.customview.widget.ViewDragHelper.create(this, 10f, DragHelperCallback())
+        mDragHelper.setEdgeTrackingEnabled(androidx.customview.widget.ViewDragHelper.EDGE_BOTTOM)
         gestureDetector = GestureDetectorCompat(context, YScrollDetector())
     }
 
@@ -67,7 +67,7 @@ class DragLayout(context: Context, attr: AttributeSet) : ViewGroup(context, attr
     }
 
 
-    inner class DragHelperCallback : ViewDragHelper.Callback() {
+    inner class DragHelperCallback : androidx.customview.widget.ViewDragHelper.Callback() {
         //用来指定拖动的对象，如果返回值为true，则表示ViewGroup中的所有View都可拖动
         override fun tryCaptureView(p0: View, p1: Int): Boolean {
             return true

@@ -4,12 +4,12 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.ultrarecyclerview.TouchViewPager
 import android.app.Activity
 import android.content.Context
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.widget.RecyclerView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -18,7 +18,7 @@ import com.alibaba.android.vlayout.layout.SingleLayoutHelper
 
 class HomeViewPagerAdapter(context: Context?) : VBaseAdapter<HomeViewPagerAdapter.TopBannerHolder>(context) {
     var context = context
-    private val mFragments: ArrayList<Fragment> = ArrayList()
+    private val mFragments: ArrayList<androidx.fragment.app.Fragment> = ArrayList()
     private var bannerList: List<String>? = null
 
     private lateinit var onItemClickListener: OnItemClickListener
@@ -50,14 +50,14 @@ class HomeViewPagerAdapter(context: Context?) : VBaseAdapter<HomeViewPagerAdapte
         mFragments.add(SimpleCardFragment.getInstance("gaga"))
         mFragments.add(SimpleCardFragment.getInstance("gaga"))
         mFragments.add(SimpleCardFragment.getInstance("gaga"))
-        val activity = context as FragmentActivity
+        val activity = context as androidx.fragment.app.FragmentActivity
         var mAdapter = MyPagerAdapter(activity.supportFragmentManager)
         mTopBannerHolder!!.vp1.adapter = (mAdapter)
         mTopBannerHolder!!.vp1.parent.requestDisallowInterceptTouchEvent(false)
     }
 
 
-    inner class TopBannerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TopBannerHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
 
         var lly_par: LinearLayout
@@ -88,7 +88,7 @@ class HomeViewPagerAdapter(context: Context?) : VBaseAdapter<HomeViewPagerAdapte
         super.onViewDetachedFromWindow(holder)
     }
 
-    private inner class MyPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+    private inner class MyPagerAdapter(fm: androidx.fragment.app.FragmentManager) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
         private val mTitles = arrayOf("11", "22", "33")
 
@@ -101,7 +101,7 @@ class HomeViewPagerAdapter(context: Context?) : VBaseAdapter<HomeViewPagerAdapte
             return mTitles[position]
         }
 
-        override fun getItem(position: Int): Fragment {
+        override fun getItem(position: Int): androidx.fragment.app.Fragment {
             return mFragments.get(position)
         }
     }

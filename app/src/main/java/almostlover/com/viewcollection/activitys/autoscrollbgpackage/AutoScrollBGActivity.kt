@@ -3,7 +3,7 @@ package almostlover.com.viewcollection.activitys.autoscrollbgpackage
 import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.utils.RvUtils
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import io.reactivex.Observable
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable

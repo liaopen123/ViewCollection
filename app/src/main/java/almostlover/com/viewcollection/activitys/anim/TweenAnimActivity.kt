@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.activitys.anim
 
 import almostlover.com.viewcollection.R
 import android.animation.AnimatorSet
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationSet
 import android.view.animation.AnimationUtils

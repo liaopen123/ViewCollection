@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.views.addcartview.cart_type_evaluator.AddCartTypeEnvaluator
 import android.animation.ObjectAnimator
 import android.graphics.PointF
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_bezier_line.*
 

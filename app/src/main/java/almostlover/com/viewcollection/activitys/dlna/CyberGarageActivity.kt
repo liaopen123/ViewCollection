@@ -6,7 +6,7 @@ import almostlover.com.viewcollection.utils.cybergarage.upnp.Device
 import almostlover.com.viewcollection.utils.cybergarage.upnp.device.DeviceChangeListener
 import almostlover.com.viewcollection.utils.lphLog
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_cyber_garage.*
 import java.net.URL
 

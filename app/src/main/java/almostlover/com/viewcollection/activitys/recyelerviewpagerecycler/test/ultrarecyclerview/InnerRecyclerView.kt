@@ -2,25 +2,26 @@ package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.u
 
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.ultrarecyclerview.OutRecyclerView.Companion.isIntercept2Inner
 import android.content.Context
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.*
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.*
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
-import android.support.v7.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 
 
 
-class InnerRecyclerView(context: Context, attr:AttributeSet) :RecyclerView(context,attr){
+class InnerRecyclerView(context: Context, attr:AttributeSet) :
+    androidx.recyclerview.widget.RecyclerView(context,attr){
     val TAG = "InnerRecyclerView"
    fun setOnHeadLister(){
 
-       addOnScrollListener(object : RecyclerView.OnScrollListener() {
+       addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
 
-           override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+           override fun onScrolled(recyclerView: androidx.recyclerview.widget.RecyclerView, dx: Int, dy: Int) {
                super.onScrolled(recyclerView, dx, dy)
                Log.i( TAG, "--------------------------------------")
-               val layoutManager = recyclerView.layoutManager as LinearLayoutManager?
+               val layoutManager = recyclerView.layoutManager as androidx.recyclerview.widget.LinearLayoutManager?
                val firstCompletelyVisibleItemPosition = layoutManager!!.findFirstCompletelyVisibleItemPosition()
                Log.i( TAG, "firstCompletelyVisibleItemPosition: $firstCompletelyVisibleItemPosition")
                if (firstCompletelyVisibleItemPosition == 0) {

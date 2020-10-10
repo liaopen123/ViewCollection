@@ -1,9 +1,9 @@
 package almostlover.com.viewcollection.activitys.recyclerviewviewpagertest2
 
 import android.content.Context
-import android.support.v4.view.ViewPager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
@@ -37,8 +37,8 @@ class MyScrollView(context: Context,attr:AttributeSet ):ScrollView(context,attr)
         super.onFinishInflate()
 
         val ll = getChildAt(0)  as LinearLayout//LinearLayout
-        val recyclerView = ll.getChildAt(0) as RecyclerView //第一个是recyclerview
-        val viewpager = ll.getChildAt(1) as ViewPager //第一个是recyclerview
+        val recyclerView = ll.getChildAt(0) as androidx.recyclerview.widget.RecyclerView //第一个是recyclerview
+        val viewpager = ll.getChildAt(1) as androidx.viewpager.widget.ViewPager //第一个是recyclerview
 
 
 

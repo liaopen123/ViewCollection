@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.adapter.AdapterFlipperViewAdapter
 import almostlover.com.viewcollection.views.flipperview.AnnouncementItemView
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.view.animation.TranslateAnimation
 import android.widget.AdapterViewFlipper
 import android.widget.TextView

@@ -1,7 +1,7 @@
 package almostlover.com.viewcollection.webrtc
 
 import almostlover.com.viewcollection.R
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_class1_camera.*
 import org.webrtc.*

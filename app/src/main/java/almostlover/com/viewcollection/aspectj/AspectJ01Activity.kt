@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.aspectj.inject.DeBugTrace
 import almostlover.com.viewcollection.aspectj01.Animal
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 
 class AspectJ01Activity : AppCompatActivity() {

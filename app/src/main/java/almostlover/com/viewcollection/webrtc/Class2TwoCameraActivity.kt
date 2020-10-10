@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.webrtc.adapter.PeerConnectionAdapter
 import almostlover.com.viewcollection.webrtc.adapter.SdpAdapter
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_class2_two_camera.*
 import org.webrtc.*
 import org.webrtc.PeerConnection.IceServer

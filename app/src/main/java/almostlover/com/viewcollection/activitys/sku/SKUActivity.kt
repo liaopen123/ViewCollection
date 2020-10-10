@@ -4,7 +4,7 @@ import almostlover.com.viewcollection.R
 import almostlover.com.viewcollection.bean.Product
 import almostlover.com.viewcollection.bean.SkuAttribute
 import almostlover.com.viewcollection.utils.lphLog
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.gson.Gson
 

@@ -1,6 +1,6 @@
 package almostlover.com.viewcollection.bean.db.room;
 
-import android.arch.persistence.room.*;
+import androidx.room.*;
 
 import java.util.List;
 

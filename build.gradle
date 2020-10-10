@@ -7,6 +7,10 @@ buildscript {
         google()
         jcenter()
         mavenCentral()
+        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
+        //添加微博maven
+        maven{ url 'https://dl.bintray.com/thelasterstar/maven/' }
+        jcenter()
 
     }
     dependencies {
@@ -20,13 +24,19 @@ buildscript {
 
 allprojects {
     repositories {
+        maven{ url'http://maven.aliyun.com/nexus/content/groups/public/'}
         google()
+        maven { url 'https://dl.bintray.com/umsdk/release' }
         jcenter()
+        //添加微博maven
+        maven{ url 'https://dl.bintray.com/thelasterstar/maven/' }
+        maven {url 'http://developer.huawei.com/repo' }
         maven { url "https://jitpack.io" }
+        maven { url "http://lib.gcssloop.com:8081/repository/gcssloop-central/" }
 
     }
 }
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
+//
+//task clean(type: Delete) {
+//    delete rootProject.buildDir
+//}

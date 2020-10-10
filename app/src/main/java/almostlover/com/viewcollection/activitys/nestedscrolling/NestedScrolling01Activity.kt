@@ -1,6 +1,6 @@
 package almostlover.com.viewcollection.activitys.nestedscrolling
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import almostlover.com.viewcollection.R

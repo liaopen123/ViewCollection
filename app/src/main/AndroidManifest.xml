@@ -30,17 +30,15 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.ImageInActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".activitys.Retrofit2Activity">
-
-        </activity>
-        <activity android:name=".activitys.habiticaloginactivity.activity.HabiticLoginActivity"></activity>
+        <activity android:name=".activitys.viewdrag.RecyclerMenuActivity"></activity>
+        <activity android:name=".activitys.inslayout.InsActivity"></activity>
+        <activity android:name=".activitys.jetpack_component.livedata.LiveDataActivity"></activity>
+        <activity android:name=".activitys.jetpack_component.lifecycle.LifecycleActivity" />
+        <activity android:name=".activitys.recyclerview_animation.FirstInAnimationActivity" />
+        <activity android:name=".activitys.layoutmanager.LayoutManagerActivity" />
+        <activity android:name=".activitys.ImageInActivity" />
+        <activity android:name=".activitys.Retrofit2Activity" />
+        <activity android:name=".activitys.habiticaloginactivity.activity.HabiticLoginActivity" />
         <activity android:name=".test.TestJavaActivity" />
         <activity android:name=".webrtc.Class3ClientActivity" />
         <activity android:name=".webrtc.Class2TwoCameraActivity" />
@@ -68,7 +66,9 @@
         <activity android:name=".activitys.recyclerview_recycler.RecyclerViewHowToRecycleActivity" />
         <activity android:name=".activitys.wallpaper.WallPagerActivity" />
         <activity android:name=".annotation.AnnotationActivity" />
-        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity" />
+        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity">
+
+        </activity>
         <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity" />
         <activity android:name=".aspectj01.Main3Activity" />
         <activity android:name=".activitys.TitleTransformActivity" />
@@ -116,14 +116,17 @@
                 android:name=".LancherActivity"
                 android:label="@string/app_name"
                 android:targetActivity="cn.com.almostlover.pushtest.SplashActivity">
+
+        </activity-alias>
+
+        <activity android:name="cn.com.almostlover.pushtest.MainActivity" />
+        <activity android:name=".activitys.viewdrag.ViewDragHelperRVActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity-alias>
-
-        <activity android:name="cn.com.almostlover.pushtest.MainActivity" />
+        </activity>
 
         <receiver android:name=".activitys.listen_sms.boardcast.BootBroadcastReciver" />
     </application>

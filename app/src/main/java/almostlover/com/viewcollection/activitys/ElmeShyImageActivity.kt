@@ -2,8 +2,8 @@ package almostlover.com.viewcollection.activitys
 
 import almostlover.com.viewcollection.R
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -29,8 +29,8 @@ class ElmeShyImageActivity : AppCompatActivity() {
         })
 
 
-        rv.setAdapter(object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-            override fun onCreateViewHolder(p0: ViewGroup, p1: Int): RecyclerView.ViewHolder {
+        rv.setAdapter(object : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+            override fun onCreateViewHolder(p0: ViewGroup, p1: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
                 return ViewHolder1(getLayoutInflater().inflate(R.layout.item_lv, p0, false))
             }
 
@@ -38,7 +38,7 @@ class ElmeShyImageActivity : AppCompatActivity() {
                 return 200
             }
 
-            override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
+            override fun onBindViewHolder(p0: androidx.recyclerview.widget.RecyclerView.ViewHolder, p1: Int) {
             }
 
         })
@@ -53,12 +53,12 @@ class ElmeShyImageActivity : AppCompatActivity() {
         //        anim.start();
 
 
-        rv.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        rv.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: androidx.recyclerview.widget.RecyclerView, newState: Int) {
                 when (newState) {
                     //停止滚动
-                    RecyclerView.SCROLL_STATE_IDLE//空闲状态
+                    androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE//空闲状态
                     -> {
                         //执行显示的动画
                         //                        延迟500ms 如果又变成滚动状态 就取消showView
@@ -74,11 +74,11 @@ class ElmeShyImageActivity : AppCompatActivity() {
                         Log.e(TAG, "空闲状态")
                     }
                     ////自动滚动开始
-                    RecyclerView.SCROLL_STATE_SETTLING
+                    androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_SETTLING
                     -> scrolling = true
 
                     ////正在被外部拖拽,一般为用户正在用手指滚动
-                    RecyclerView.SCROLL_STATE_DRAGGING
+                    androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING
                     -> {
                         scrolling = true
                         if (!iv!!.isHasHide) {
@@ -98,7 +98,7 @@ class ElmeShyImageActivity : AppCompatActivity() {
 
     }
 
-    internal inner class ViewHolder1(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    internal inner class ViewHolder1(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     }
 }

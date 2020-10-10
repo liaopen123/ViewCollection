@@ -5,7 +5,7 @@ import almostlover.com.viewcollection.utils.AssetsFileUtil
 import android.R.attr.path
 import android.net.Uri
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView

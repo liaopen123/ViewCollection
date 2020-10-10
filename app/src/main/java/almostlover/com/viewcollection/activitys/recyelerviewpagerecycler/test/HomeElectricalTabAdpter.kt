@@ -2,7 +2,7 @@ package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test
 
 import almostlover.com.viewcollection.R
 import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import com.alibaba.android.vlayout.LayoutHelper
@@ -35,7 +35,7 @@ class HomeElectricalTabAdpter(context: Context?) : VBaseAdapter<HomeElectricalTa
     }
 
 
-    inner class TopBannerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TopBannerHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
 
 

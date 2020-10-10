@@ -2,12 +2,13 @@ package almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.test.u
 
 import almostlover.com.viewcollection.activitys.recyelerviewpagerecycler.RecyeclerViewPagerRecyclerViewActivity
 import android.content.Context
-import android.support.v4.view.ViewPager
+import androidx.viewpager.widget.ViewPager
 import android.util.AttributeSet
 import android.util.Log
 import android.view.MotionEvent
 
-class TouchViewPager(context: Context,attr:AttributeSet):ViewPager(context,attr){
+class TouchViewPager(context: Context,attr:AttributeSet):
+    androidx.viewpager.widget.ViewPager(context,attr){
 
     val TAG = "TouchViewPager"
 

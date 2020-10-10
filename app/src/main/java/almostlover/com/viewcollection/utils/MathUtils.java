@@ -1,6 +1,6 @@
 package almostlover.com.viewcollection.utils;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.text.TextUtils;
 
 import java.math.BigDecimal;

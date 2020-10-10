@@ -2,9 +2,9 @@ package almostlover.com.viewcollection.activitys.fancybehavior.behavior
 
 import android.content.Context
 import android.os.Handler
-import android.support.design.widget.CoordinatorLayout
-import android.support.v4.view.ViewCompat
-import android.support.v7.widget.RecyclerView
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.view.ViewCompat
+import androidx.recyclerview.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
@@ -16,7 +16,7 @@ import kotlin.math.abs
 
 
 class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
-    CoordinatorLayout.Behavior<RecyclerView>(context, attr) {
+    androidx.coordinatorlayout.widget.CoordinatorLayout.Behavior<androidx.recyclerview.widget.RecyclerView>(context, attr) {
 
     private val TAG: String = "HeaderScrollingBehavior"
     var isExpanded = false
@@ -49,8 +49,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
      * 设置依赖
      */
     override fun layoutDependsOn(
-        parent: CoordinatorLayout,
-        child: RecyclerView,
+        parent: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         dependency: View
     ): Boolean {
 
@@ -63,13 +63,13 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
 
 
     override fun onLayoutChild(
-        parent: CoordinatorLayout,
-        child: RecyclerView,
+        parent: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         layoutDirection: Int
     ): Boolean {
 
-        val layoutParams = child.layoutParams as CoordinatorLayout.LayoutParams
-        if (layoutParams.height == CoordinatorLayout.LayoutParams.MATCH_PARENT) {
+        val layoutParams = child.layoutParams as androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams
+        if (layoutParams.height == androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams.MATCH_PARENT) {
             child.layout(
                 0, 0, parent.width,
                 (parent.height - getDependentViewCollaspedHeight()!!).toInt()
@@ -82,8 +82,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
 
 
     override fun onDependentViewChanged(
-        parent: CoordinatorLayout,
-        child: RecyclerView,
+        parent: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         dependency: View
     ): Boolean {
         Log.e(TAG, "都一次初始化加载进来的时候就会调用一次:onDependentViewChanged")
@@ -112,8 +112,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
      * false：表示不管.
      */
     override fun onStartNestedScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         directTargetChild: View,
         target: View,
         axes: Int,//滑动方向，是水平，还是垂直
@@ -124,8 +124,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
     }
 
     override fun onNestedScrollAccepted(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         directTargetChild: View,
         target: View,
         axes: Int,
@@ -147,8 +147,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
 
 
     override fun onNestedPreScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         target: View,
         dx: Int,
         dy: Int,
@@ -174,8 +174,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
 
 
     override fun onNestedScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         target: View,
         dxConsumed: Int,
         dyConsumed: Int,
@@ -208,8 +208,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
     }
 
     override fun onNestedPreFling(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         target: View,
         velocityX: Float,
         velocityY: Float
@@ -218,8 +218,8 @@ class HeaderScrollingBehavior(context: Context, attr: AttributeSet) :
     }
 
     override fun onStopNestedScroll(
-        coordinatorLayout: CoordinatorLayout,
-        child: RecyclerView,
+        coordinatorLayout: androidx.coordinatorlayout.widget.CoordinatorLayout,
+        child: androidx.recyclerview.widget.RecyclerView,
         target: View,
         type: Int
     ) {

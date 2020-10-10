@@ -5,8 +5,8 @@ import almostlover.com.viewcollection.bean.db.room.AppDatabase
 import almostlover.com.viewcollection.bean.db.room.RoomSearBean
 import almostlover.com.viewcollection.utils.MathUtils
 import almostlover.com.viewcollection.utils.RandomUtils
-import android.arch.persistence.room.Room
-import android.support.v7.app.AppCompatActivity
+import androidx.room.Room
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns

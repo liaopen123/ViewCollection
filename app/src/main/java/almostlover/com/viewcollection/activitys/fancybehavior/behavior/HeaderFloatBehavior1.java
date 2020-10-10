@@ -3,7 +3,7 @@ package almostlover.com.viewcollection.activitys.fancybehavior.behavior;
 import android.animation.ArgbEvaluator;
 import android.content.Context;
 import android.content.res.Resources;
-import android.support.design.widget.CoordinatorLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import android.util.AttributeSet;
 import android.view.View;
 
