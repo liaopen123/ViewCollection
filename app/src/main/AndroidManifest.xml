@@ -30,12 +30,15 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.myviewgroup.MyViewPageActivity">
+        <activity android:name=".activitys.layoutmanager.LayoutManagerDemo1Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activitys.myviewgroup.MyViewPageActivity">
+
         </activity>
         <activity android:name=".activitys.viewdrag.RecyclerMenuActivity" />
         <activity android:name=".activitys.inslayout.InsActivity" />
@@ -73,7 +76,7 @@
         <activity android:name=".activitys.recyclerview_recycler.RecyclerViewHowToRecycleActivity" />
         <activity android:name=".activitys.wallpaper.WallPagerActivity" />
         <activity android:name=".annotation.AnnotationActivity" />
-        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity"></activity>
+        <activity android:name=".activitys.viewdrag.ViewDragHelperActivity" />
         <activity android:name=".activitys.motioneventxdifference.DifferenceBetweenVGAndViewActivity" />
         <activity android:name=".aspectj01.Main3Activity" />
         <activity android:name=".activitys.TitleTransformActivity" />
@@ -120,12 +123,10 @@
         <activity-alias
                 android:name=".LancherActivity"
                 android:label="@string/app_name"
-                android:targetActivity="cn.com.almostlover.pushtest.SplashActivity"></activity-alias>
+                android:targetActivity="cn.com.almostlover.pushtest.SplashActivity" />
 
         <activity android:name="cn.com.almostlover.pushtest.MainActivity" />
-        <activity android:name=".activitys.viewdrag.ViewDragHelperRVActivity">
-
-        </activity>
+        <activity android:name=".activitys.viewdrag.ViewDragHelperRVActivity"></activity>
 
         <receiver android:name=".activitys.listen_sms.boardcast.BootBroadcastReciver" />
     </application>

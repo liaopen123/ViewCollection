@@ -1,13 +1,13 @@
 package almostlover.com.viewcollection.activitys.layoutmanager
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
-class CardLayoutManager : androidx.recyclerview.widget.RecyclerView.LayoutManager(){
-    override fun generateDefaultLayoutParams(): androidx.recyclerview.widget.RecyclerView.LayoutParams {
-        return  androidx.recyclerview.widget.RecyclerView.LayoutParams(
-            androidx.recyclerview.widget.RecyclerView.LayoutParams.WRAP_CONTENT,
-            androidx.recyclerview.widget.RecyclerView.LayoutParams.WRAP_CONTENT)
+class CardLayoutManager : RecyclerView.LayoutManager(){
+    override fun generateDefaultLayoutParams(): RecyclerView.LayoutParams {
+        return  RecyclerView.LayoutParams(
+            RecyclerView.LayoutParams.WRAP_CONTENT,
+            RecyclerView.LayoutParams.WRAP_CONTENT)
     }
 
     var offsetX = 0
@@ -27,7 +27,7 @@ class CardLayoutManager : androidx.recyclerview.widget.RecyclerView.LayoutManage
 
 
 
-    override fun onLayoutChildren(recycler: androidx.recyclerview.widget.RecyclerView.Recycler, state: androidx.recyclerview.widget.RecyclerView.State) {
+    override fun onLayoutChildren(recycler: RecyclerView.Recycler, state: RecyclerView.State) {
         if(itemCount==0){
             //没有数据就不处理
             removeAndRecycleAllViews(recycler)
@@ -60,8 +60,8 @@ class CardLayoutManager : androidx.recyclerview.widget.RecyclerView.LayoutManage
 
     override fun scrollHorizontallyBy(
         dx: Int,
-        recycler: androidx.recyclerview.widget.RecyclerView.Recycler?,
-        state: androidx.recyclerview.widget.RecyclerView.State?
+        recycler: RecyclerView.Recycler?,
+        state: RecyclerView.State?
     ): Int {
         offsetChildrenHorizontal(-dx)//移动元素
         offsetX -=dx
