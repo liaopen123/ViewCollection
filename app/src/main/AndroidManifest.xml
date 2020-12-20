@@ -30,17 +30,19 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activitys.markdown.MarkDownActivity">
+        <activity android:name=".activitys.viewchangeanim.ViewChangeAnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitys.anim.CircularRevealActivity">
+        <activity android:name=".activitys.markdown.MarkDownActivity">
+
         </activity>
+        <activity android:name=".activitys.anim.CircularRevealActivity"></activity>
         <activity android:name=".activitys.viewpager2.ViewPager2Activity" />
-        <activity android:name=".activitys.persisitantrv.PersistantRVActivity"></activity>
+        <activity android:name=".activitys.persisitantrv.PersistantRVActivity" />
         <activity android:name=".activitys.layoutmanager.LayoutManagerDemo1Activity" />
         <activity android:name=".activitys.myviewgroup.MyViewPageActivity" />
         <activity android:name=".activitys.viewdrag.RecyclerMenuActivity" />
